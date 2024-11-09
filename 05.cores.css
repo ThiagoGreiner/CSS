@@ -1,0 +1,58 @@
+/* COMANDOS PARA ESTILIZAÇÃO DE CORES *?
+
+/* Existe diversas propriedades css que utilizam cores, porem as mais utilizadas são duas: */
+/* color, utilizamos o atributo color para definitmos cores aos nossos elementos HTML*/
+/* backgrond-color, utilizamos esse elemento para definirmos uma cor de fundo para nosso html */
+
+
+/* CORES PRÉ-DEFINIDAS */
+
+/* Os navegadores disponibilizam em média 140 cores pré-definidas com nomes que podemos utilizar */
+color: red;
+/* Podemos visualizar estas cores e seus respectivos nomes no site https://www.w3schools.com/tags/ref_colornames.asp */
+
+/* CORES TRANSPARENTES */
+
+/* Podemos utilizar o comando transparente como uma cor, para utilizar informamos o valor transparent */
+color: transparent;
+
+/* CURRENTCOLOR */
+
+/* Utilizamos esse comando quando queremos definir uma cor dinamica para o nosso elemento */
+/* Exemplo, temos um texto orange e precisamos definir uma borda com a mesma cor para ele, para não precisarmos ficar alterando a cor a cada vez que a cor da letra se alterar, utilizamos o comando currentcolor */
+border: 2px solid currentcolor;
+
+/* RGB (RED, GREEN, BLUE) */
+
+/* Para utilizar essas cores no CSS nós precisamos misturar essas três cores principais, para isso nós utilizamos o rgb(red, green, blue) e dentro vai os 3 valores separados por virgulas, os valores são representados por numeros que vão de 0 até 255, oque ira representar a tonalidade de cada cor */
+color: rgb(246, 148, 92);
+/* Podemos tambem utilizar a porcentagem para definir a tonalidade de cada cor, para isso utilizamos valores de 0 a 100% */
+color: rgb(20%, 80%, 53%);
+
+/* RGBA (RED, GREEN, BLUE, ALPHA) */
+
+/* Este comando funciona da mesma forma que o RGB, porem temos um acrescimo do alpha que é utilizado para definir a transparencia */
+/* O alpha vai de 0.0 a 1.0, sendo 0.0 totalmente transparente e 1.0 sendo sem transparência */
+color: rgba(150, 60, 235, 0.8);
+
+/* HEXADECIMAL */
+
+/* Os valores hexadecimais são compostos pelo sinal de # seguidos de mais 6 digitos, os dois primeiros digitos representam a intencidade da cor vermelha, os 2 digitos do meio representam a intencidade da cor verde e os dois ultimos digitos representam a intensidade da cor azul */
+/* Cada cor possui 256 tonalidade, porem no hexacimal essas cores são definidas por numeros e letras que vão de 0 a 9 e de A a F */
+color: #00226F;
+
+/* HEXADECIMAL + ALPHA */
+
+/* Este comando funciona da mesma forma que o hexadecimal normal, porem temos os dois digitos no final que representam a transparência */
+/* Sendo que 00 é totalmente transparente e FF sem transparência */
+
+/* HSL (HUE, SATURATION, LIGHTNESS) */
+
+/* HUE representa o grau na roda de cores de 0 a 360, onde cada grau ira representar uma cor e o 0 representa a cor vermelha (https://arquivo.devmedia.com.br/artigos/Joel_Rodrigues/CSS3/colors/colors5.png) */
+/* SATURATION é representado pelo percentual de 0% (cor cinza) a 100% (cor total) */
+/* LIGHTNESS(Luminosidade) tambem é representado pelo percentual de 0% (cor preta) a 100% (cor branca)
+hsl(120, 100%, 80%)
+
+/* HSLA (HUE, SATURATION, LIGHTNESS, ALPHA) */
+
+/* Este comando funciona da mesma forma que o HSL normal, porem contem o ALPHA para representar a transparência que pode ir de 0 a 100% ou 0.0 a 1.0 */

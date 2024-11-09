@@ -1,0 +1,32 @@
+/* LARGURA */
+
+/* Para definir a largura de um elemento nós utilizamos a palavra width seguido do valor que queremos aplicar */
+width: 10px;
+
+/* ALTURA */
+
+/* Para definir a altura de um elemento nós utilizamos a palavra heigth seguido do valor que queremos aplicar */
+heigth: 10px;
+
+/* VALORES PADRÕES */
+
+/* auto, é utilizamos para que o css aplique uma medida automatica para nosso elemento */
+width: auto;
+/* initial, é utilizamos para que o css aplique a medida padrão daquela propriedade/elemento */
+width: initial;
+/* inherit, é utilizamos para que o css aplique uma medida de acordo com a medida do elemento pai do nosso elemento */
+width: inherit;
+
+/* LARGURA MINIMA E LARGURA MAXIMA */
+
+/* Permite definirmos uma largura minima para os elementos, assim por mais que o conteudo seja menor que uma determinada largura, o elemento pai ainda se mantera em uma largura minima pré definida */
+min-width: 200px;
+/* Permite definirmos uma largura maxima para os elementos, assim por mais que o conteudo seja maior que uma determinada largura, o elemento pai ainda se mantera em uma largura maxima pré definida */
+max-width: 200px;
+
+/* ALTURA MINIMA E ALTURA MAXIMA */
+
+/* Permite definirmos uma altura minima para os elementos, assim por mais que o conteudo seja menor que uma determinada altura, o elemento pai ainda se mantera em uma altura minima pré definida */
+min-heigth: 200px;
+/* Permite definirmos uma altura maxima para os elementos, assim por mais que o conteudo seja maior que uma determinada altura, o elemento pai ainda se mantera em uma altura maxima pré definida */
+max-heigth: 200px;

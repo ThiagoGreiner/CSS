@@ -1,0 +1,25 @@
+/* REDIMENCIONAMENTO */
+
+/* Para determinar como uma imagen ou video vai se dimencionar para caber dentro da caixa do nosso elemento, para fazer esse ajuste nós utilizamos a propriedade object-fit, este propriedade diz para a imagem ou video se ele deve preservar a proporção para caber no container, ou se ele deve destorcer para ocupar o maximo de espaço */
+object-fit: ;
+/* fill, é o valor padrão utilizado e ele faz com que a imagem/video se estique para obedecer as proporções que nós definimos para a imagem */
+object-fit: fill;
+/* contain, faz com que a imagem/video se ajuste para caber dentro do container, respeitando a menor dimenção height ou width, isto pode fazer com que a imagem perca alguma qualidade */
+object-fit: contain;
+/* cover, faz com que a imagem/video preencha todo o container, esse valor não destorce a imagem porem corta as partes da imagem que não couberem dentro do container */
+object-fit: cover;
+/* none, faz com que a imagem mantenha seu tamanho original e se por padrão ela for maior que o container, ela corta as partes da imagem que não couberem dentro do container */
+object-fit: none ;
+/* scale-down, faz com que o css escolha entre os valores contain e none e escolha a opção que fica com a imagem/video fique de um tamanho menor */
+object-fit: scale-down ;
+
+/* POSICIONAMENTO */
+
+/* Para reposicionar a nossa imagem/video, utilizamos a propriedade object-position, e o valor padrão dela é 50% para esquerda e direita e 50% para cima e para baixo, ou seja, centralizada */
+object-position: 50% 50%;
+/* Tambem podemos utilizar outras unidade de medidas como pixel e valor negativos */
+object-position: -100px 90px;
+/* Tambem são aceitas palavras chaves como left, right, center para o eixo x (horizontal) */
+object-position: center 50%;
+/* E tambem são aceitas palavras chaves como top, bottom, center, end, start para o eixo y (vertical) */
+object-position: center top;

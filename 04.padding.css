@@ -1,0 +1,37 @@
+/* PADDING */
+
+/* Utilizamos esse comando para aplicar paddings ao nosso elemento (um espaçamento dentro da caixa com relação a borda dele), o padding tambem aceita valores negativos */
+
+/* Utilizamos o comando padding-top para aplicar espaçamento superiores */
+padding-top: 10px;
+/* Utilizamos o comando padding-bottom para aplicar espaçamento inferiores */
+padding-bottom: 10px;
+/* Utilizamos o comando padding-left para aplicar espaçamento a esquerda */
+padding-left: 10px;
+/* Utilizamos o comando padding-right para aplicar espaçamento a direita */
+padding-right: 10px;
+/* Utilizamos tambem somente o comando padding para aplicar espaçamentos nos quatro lados do elemento */
+padding: 10px;
+
+/* Utilizando o padding, se informarmos dois valores nele, o primeiro aplicara um espaçamento na parte superior e inferior e o segundo aplicara um espaçamento a esquerda e a direita */
+padding: 10px 20px;
+/* Utilizando o padding, se informarmos três valores nele, o primeiro aplicara um epaçamento na parte superior, o segundo aplicara um espaçamento a esquerda e a direita, e o terceiro valor aplicara um espaçamento na parte inferior */
+padding: 10px 20px 30px;
+/* Utilizando o padding, se informarmos quatro valores nele, o primeiro aplicara um espaçamento na parte superior, o segundo aplicara um espaçamento a direita, o terceiro valor aplicara um espaçamento na parte inferior e o quarto valor aplicara um espaçamento na esquerda */
+padding: 10px 20px 30px 40px;
+
+/* VALORES PADRÕES */
+
+/* auto, é utilizado para que o css aplique um espaçamento automatica para nosso elemento */
+padding: auto;
+/* inherit, é utilizamos para que o css aplique um espaçamento de acordo com a medida do elemento pai do nosso elemento */
+padding: inherit;
+
+/* BOX-SIZING */
+
+/* Este comando possui duas opções de valores para ele /*
+
+/* content-box, ira somar no tamanho total do elemento o tamanho do padding */
+box-sizing: content-box
+/* border-box, ira descontar do tamanho total do elemento o tamanho do padding */
+box-sizing: content-box

@@ -1,0 +1,26 @@
+/* MARGIN */
+
+/* Utilizamos esse comando para aplicar margens ao nosso elemento (um espaçamento fora da caixa), a margem tambem aceita valores negativos */
+
+/* Utilizamos o comando margin-top para aplicar margens superiores */
+margin-top: 10px;
+/* Utilizamos o comando margin-bottom para aplicar margens inferiores */
+margin-bottom: 10px;
+/* Utilizamos o comando margin-left para aplicar margens a esquerda */
+margin-left: 10px;
+/* Utilizamos o comando margin-right para aplicar margens a direita */
+margin-right: 10px;
+/* Utilizamos tambem somente o comando margin para aplicar margens nos quatro lados do elemento */
+margin: 10px;
+
+/* Utilizando o margin, se informarmos dois valores nele, o primeiro aplicara uma margem na parte superior e inferior e o segundo aplicara uma margem a esquerda e a direita */
+margin: 10px 20px;
+/* Utilizando o margin, se informarmos três valores nele, o primeiro aplicara uma margem na parte superior, o segundo aplicara uma margem a esquerda e a direita, e o terceiro valor aplicara uma margem na parte inferior */
+margin: 10px 20px 30px;
+/* Utilizando o margin, se informarmos quatro valores nele, o primeiro aplicara uma margem na parte superior, o segundo aplicara uma margem a direita, o terceiro valor aplicara uma margem na parte inferior e o quarto valor aplicara uma margem na esquerda */
+margin: 10px 20px 30px 40px;
+
+/* VALORES PADRÕES */
+
+/* auto, é utilizado para que o css aplique uma margem automatica para nosso elemento */
+margin: auto;

@@ -1,0 +1,125 @@
+/* DEGRADE - EFEITOS GRADIENTES */
+
+/* Tambem podemos utilizar degrades como fundo dos projetos, para isso utilizamos o background-image + linear-gradient */
+/* Podemos utilizar diversas cores dentro do degrade, não tendo um limite de cores */
+background-image: linear-gradient(red, blue);
+/* Tambem podemos utilizar o radial-gradient, que ao contrario do linear que segue um efeito degrade a cada linha, o radial tem um formato em circulo */
+background-image: radial-gradient(red, blue);
+/* Podemos tambem utilizar alguns efeitos de repetição utilizando o repeating */
+/* Aqui basicamente estamos dizendo que o estilo deve se iniciar no topo (to top), depois escolhemos a primeiro cor e qual valor em pixel ela deve ter, e depois basta repetir outras cores */
+background-image: repeating-linear-gradient(to top, red 0 20px, blue 20px 40px);
+/* Aqui podemos visualizar alguns estilos prontos que basta copiarmos e colocarmos em nosso código (https://projects.verou.me/css3patterns/)*/
+
+/* FUNDO COM IMAGENS */
+
+/* Para utilizar imagens como fundo no css, utilizamos a propriedade background-image + a URL informando o caminho da imagem, sendo que esta pode estar em um servidor externo ou dentro do projeto */
+background-image: url('caminho da imagem');
+/* Podemos tambem utilizar imagens em camada, vale lembrar que a imagem mais de cima sera a que foi passada primeiro e assim sucessivamente */
+background-image: url('caminho da imagem'), url('caminho da imagem');
+
+/* REDIMENCIONANDO IMAGENS */
+
+/* Para ajustar as imagens colocadas em nosso CSS utilizamos o brackground-size, que por padrão ele possui o valor auto, oque faz com que a imagem de ajuste automaticamente no elemento, porem se a imagem for muito grande, isso pode ser um problema */
+background-size: auto;
+/* cover, é utilizado para que a imagem cubra todo o container, caso a imagem seja muito pequena ela ira se esticar e podera perder um pouco de qualidade, já se for muito grande pode acontecer de cortar um pedaço da imagem */
+background-size: cover; 
+/* contain, utilizamos para redimencionar a imagem para que ela caiba completamente dentro do container, caso sobre espaço a imagem ira se repetir */
+background-size: contain;
+/* Tambem podemos alterar largura da imagen, utilizando um valor como pixel ou % */
+background-size: 90%;
+background-size: 400px;
+/* Tambem podemos fazer a utilização de dois valores, isso fara com que o primeiro valor altere a largura e o segundo a altura */
+background-size: 200px 300px;
+background-size: 50% 100%;
+/* multicamadas, para fazermos o redimencionamento multicamada separamos o valor por virgula, exemplo, passamos o contain para a primeira imagem e o cover para a segunda */
+background-image: url('caminho da imagem'), url('caminho da imagem');
+background-size: contain, cover;
+
+/* REPETIÇÃO DA IMAGEM */
+
+/* Quando nossa imagem for menor que o container, por padrão ela ira se repetir em todos os eixos para completar todo o espaço do container, ou seja, ela sera repeat */
+background-repeat: repeat;
+/* repeat-x, isto faz com que a nossa imagem se repita apenas do eixo x do nosso container (horizontal) */
+background-repeat: repeat-x;
+/* repeat-y, isto faz com que a nossa imagem se repita apenas do eixo y do nosso container (vertical) */
+background-repeat: repeat-y;
+/* space, isto faz com a nossa imagem se repita tanto no eixo x quanto no eixo y, porem caso algo imagem ele precise ser cortada para caber no container, ele retira esta imagem que seria cortada e cria espaçamentos em branco */
+background-repeat: space;
+/* round, isto faz com que nossa imagem se repita tanto no eixo x quanto no eixo y, porem todas imagens são redimencionadas para que nem uma precise ser cortada */
+background-repeat: round;
+/* no-repeat, faz com que a imagem não se repita dentro do container mesmo que sobre espaços */
+background-repeat: no-repeat;
+/* multivalores, podemos utilizar mais de um valor, fazendo as vezes com que aja de uma forma de um eixo e de outra no outro eixo, para isso o primeito valor ira apontar para o eixo x (vertical) e o segundo para o eixo y (vertical) */
+background-repeat: space no-repeat;
+
+/* POSICIONAMENTO DA IMAGEM DE FUNDO */
+
+/* Para reposicionar imagens em nosso container, utilizamos o background-position e emtão informar os valores a ele, como bottom, top, left, right, center */
+background-position: center;
+/* Podemos tambem fazer esse definição por valores, utilizando o pixel ou %, para posisionar no eixo x (horizontal) */
+background-position: 10px;
+/* Multivalor, ou podemos utilizar dois valores, isso fara com que o primeiro valor aponte para o eixo x (horizontal) e o segundo aponte para o eixo y (vertical) */
+background-position: 10px 20px;
+/* multicamadas, para fazermos o posicionamento multicamada separamos o valor por virgula, exemplo, passamos o center para a primeira imagem e o left para a segunda */
+background-image: url('caminho da imagem'), url('caminho da imagem');
+background-position: center, left;
+
+/* MOVIMENTAÇÃO DA IMAGEM DE FUNDO DE ACORDO COM A JANELA DO NAVEGADOR */
+
+/* fixed, caso a imagem esteja em um container dentro da pagina, quando rolarmos o scroll dentro do container a imagem ficara fixa, mas quando rolarmos o scroll da pagina a imagem ira acompanhar */
+background-attachment: fixed;
+/* scroll, caso a imagem esteja em um container dentro da pagina, quando rolarmos o scroll dentro do container a imagem ficara fixa, e quando rolarmos o scroll da pagina a imagem tambem continuara fixa */
+background-attachment: scroll;
+/* local, caso a imagem esteja em um container dentro da pagina, quando rolarmos o scroll dentro do container a imagem ira acompanhar, e quando rolarmos o scroll da pagina a imagem ficara fixa */
+background-attachment: local;
+
+/* PONTO DE ORIGEM DA IMAGEM */
+
+/* padding-box, faz com que a imagem se inicie no canto superior esquerdo, mas tambem dentro do espaçamento interno  */
+background-origin: padding-box;
+/* border-box, faz com a imagem começe no canto superior esquerdo mas tambem ocupe o espaço das bordas */
+background-origin: border-box;
+/* content-box, faz com a imagem começe no canto superior esquerdo mas não cubra nem a borda e nem o espaçamento interno do containerv */
+background-origin: content-box;
+
+/* AREA DE PREENCHIMENTO */
+
+/* padding-box, faz com que a imagem ou cor oreencha o espaçamento interno do container incluindo a area do padding */
+background-clip: padding-box;
+/* border-box, faz com a imagem ou cor ocupe o espaço das bordas */
+background-clip: border-box;
+/* content-box, faz com a imagem não cubra nem a borda e nem o espaçamento interno do container */
+background-clip: content-box;
+/* Esta propriedade podemos utilizar para estilar textos ao invés de fundos, e para que ela funcione no chrome é necessario utilizar a configuração -webkit-background-clip: text; e após isso informar que a cor do nosso texto seja transparente e depois um background-clip: text;*/
+-webkit-background-clip: text;
+color: transparent;
+background-clip: text;
+
+/* MESCLAGEM DE ELEMENTOS E CORES DE FUNDO */
+
+/* Por padrão essa atributo vem com o valor normal, mas podemos alterar conforme a necessidade */
+background-bled-mode: normal;
+/* multiplay, este valor permite utilizamos uma imagem e alterarmos a cor dela utilizando o background-color */
+background-bled-mode: multiplay;
+/* screnn, este valor deixa a imagem mais iluminada */
+background-bled-mode: screen;
+/* overlay, este valor permite utilizamos uma imagem e alterarmos a cor dela utilizando o background-color */
+background-bled-mode: overlay;
+/* darken, este valor permite utilizamos uma imagem e alterarmos a cor dela utilizando o background-color deixando a cor da imagem mais fosca */
+background-bled-mode: darken;
+/* lighten, este valor deixa a imagem mais iluminada */
+background-bled-mode: lighten;
+
+/* PROPIEDADE BACKGROUND */
+
+/* Ao utilizamos esta propriedade sozinha, podemos aplicar qualquer um dos efeitos que são aplicados por outras propriedade background, pois é como se ele fosse uma forma resumida de utilização */
+/* Caso adicionarmos cores de fundo e depois uma imagem, a cor não se aplicara para a imagem, é preciso sempre informar a imagem e depois a cor para que a cor se aplique */
+background:
+    url(link_da_imagem) /* imagem */
+    top center / 200px 200px /*Position / size */
+    no-repeat /* repeat */
+    fixed /* attachment */
+    padding-box /* origin */
+    content-boc /* clip */
+    red /* color */
+;

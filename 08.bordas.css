@@ -1,0 +1,137 @@
+/* ESPESSURA DA BORDA */
+
+/* border-width, utilizamos para definir a espessura, largura da nossa borda */
+border-width: 10px
+/* Para definirmos a espessura podemos utilizar tanto unidade de medidas como tambem palavras chaves */
+/* thin, utilizamos para criar bordas finas, equivale a 1px */
+border-width: thin;
+/* medium, utilizamos para criar bordas medias, equivale a 3px */
+border-width: medium;
+/* thick, utilizamos para criar bordas grossas, equivale a 5px */
+border-width: thick;
+/* A border-width ainda nos permite aplicar diferentes espessuras de bordas em cada lado de um container */
+/* Se informarmos dois valores, o primeiro se aplicara as bordas da parte superior e inferior e o segundo se aplicara a esquerda e a direita */
+border-width: 20px 10px;
+/* Se informarmos três valores nele, o primeiro se aplicara na parte superior, o segundo se aplicara a esquerda e a direita, e o terceiro valor se aplicara na parte inferior */
+border-width: 20px 10px 30px;
+/* Se informarmos quatro valores, o primeiro se aplicara na parte superior, o segundo se aplicara a direita, o terceiro valor se aplicara a parte inferior e o quarto valor se aplicara na esquerda */
+border-width: 20px 10px 30px 40px;
+
+/* ESTILO DE BORDA */
+
+/* none, este é o valor padrão dos atributos border, oque não apresenta nem um estilo de borda */
+border-sytle: none; 
+/* solid, utilizamos para criar uma borda continua */
+border-sytle: solid;
+/* dashed, utilizamos para criar uma borda de pequenos traços */
+border-sytle: dashed;
+/* dotted, utilizamos para criar uma borda de pequenos pontos */
+border-sytle: dotted;
+/* double, utilizamos para criar uma borda dupla continua */
+border-sytle: double;
+/* grouve, utilizamos para criar uma borda continua 3D para direita */
+border-sytle: grouve;
+/* ridge, utilizamos para criar uma borda continua 3D para esquerda */
+border-sytle: ridge;
+/* inset, utilizamos para criar uma borda 3D centralizada com efeito afundado */
+border-sytle: inset;
+/* outset, utilizamos para criar uma borda 3D centralizada com efeito saindo da tela */
+border-sytle: outset;
+/* Podemos tambem aplicar bordas mistas, passando mais de um valor */
+/* Se informarmos dois valores, o primeiro se aplicara as bordas da parte superior e inferior e o segundo se aplicara a esquerda e a direita */
+border-sytle: dotted dashed;
+/* Se informarmos três valores nele, o primeiro se aplicara na parte superior, o segundo se aplicara a esquerda e a direita, e o terceiro valor se aplicara na parte inferior */
+border-sytle: solid dotted dashed;
+/* Se informarmos quatro valores, o primeiro se aplicara na parte superior, o segundo se aplicara a direita, o terceiro valor se aplicara a parte inferior e o quarto valor se aplicara na esquerda */
+border-sytle: double solid dotted dashed;
+
+/* COR DA BORDA */
+
+/* Para alterar a cor das bordas utilizamos o atributo border-color, caso não defirmos uma cor para nossa borda, sera aplicada a cor utilizada por nossa fonte */
+border-color: white;
+/* Podemos tambem aplicar cores mistas, passando mais de um valor */
+/* Se informarmos dois valores, o primeiro se aplicara as bordas da parte superior e inferior e o segundo se aplicara a esquerda e a direita */
+border-color: white red;
+/* Se informarmos três valores nele, o primeiro se aplicara na parte superior, o segundo se aplicara a esquerda e a direita, e o terceiro valor se aplicara na parte inferior */
+border-color: white red black;
+/* Se informarmos quatro valores, o primeiro se aplicara na parte superior, o segundo se aplicara a direita, o terceiro valor se aplicara a parte inferior e o quarto valor se aplicara na esquerda */
+border-color: white red black orange;
+
+/* BORDER /*
+
+/* Ao utilizamos esta propriedade sozinha, podemos aplicar a espessura, estilo e cor, pois é como se ele fosse uma forma resumida de utilização */
+border: 10px solid green;
+/* Ainda podemos aplicar especificamente para um lado da borda apenas, para isso utilizamos as palavras reservadas, bottom, top, left, right */
+border-top: 10px solid green;
+border-bottom: 10px solid green;
+border-right: 10px solid green;
+border-left: 10px solid green;
+
+/* ARREDONDAMENTO DAS BORDAS */
+
+/* Podemos arredondas os cantos das bordas utilizando a propriedade border-radius, não é necessario ter uma borda para utilizar este atributo */
+border-radius: 20px;
+/* Podemos tambem aplicar arredondamentos mistos, passando mais de um valor */
+/* Se informarmos dois valores, o primeiro se aplicara ao canto superior esquerdo e inferior direito e o segundo se aplicara ao canto superior direito e inferior esquerdo */
+border-radius: 20px 10px;
+/* Se informarmos três valores, o primeiro se aplicara no canto superior esquerdo, o segundo se aplicara ao canto superior direito e inferior esquerdo, e o terceiro valor se aplicara no canto inferior direito */
+border-radius: 20px 10px 30px;
+/* Se informarmos quatro valores, o primeiro se aplicara no canto superior esquerdo, o segundo se aplicara ao canto superior direito, o terceiro valor se aplicara ao canto inferior direito o quarto valor se aplicara ao canto inferior esquerdo */
+border-radius: 20px 10px 30px 40px;
+/* Podemos tambem aplicar um arredondamento oval, para isso utilizamos um barra entre os valores, assim o primeiro valor ira apontar para horizontal e o segundo para vertical */
+border-radius: 50px/110px;
+/* Podemos tambem utilizar valor de %, e caso o valor de porcentagem informado seja 50%, poderemos formas um circulo caso as dimeções da caixa sejam todas iguais (quadrado perfeito) */
+border-radius: 50%;
+
+/* BORDAS COM IMAGENS OU GRADIENTE */
+
+/* border-image-source, utilizamos seguido do url() para definir o caminho da imagem, é necessario que tenhamos uma borda para utilizar essa propriedade */
+border-image-source: ur(caminho_da_imagem)
+/* Ainda é possivel utilziar as propriedades degrades nas bordas, as mesmas vistas em 07.fundos.css */
+border-image-source: linear-gradient(red, blue);
+border-image-source: radial-gradient(red, blue);
+
+/* VALOR DO PREENCHIMENTO DA IMAGEM NA BORDA */
+
+/* Quando utilizamos a propriedade border-image-slice,é como se ela dividisse a nossa imagem e 9 pedaços sendo em 3 linhas e 3 colunas, onde cada pedaço da imagem ganha um numero, canto superior esquerdo (1), superior central (5), canto superior direito (2), lateral esquerda central (8), central (9), lateral direta central (6), canto inferior esquerdo (4), inferior central (7) e canto inferior direito (3), utilizamos valores numericos para informar quanto queremos que a imagem preencha a borda a palavra reservada fill caso queiramos que a imagem ocupe o espaço 9. oque geralmente não é o caso, já que ele é o espaço do conteudo */
+border-image-slice: 10;
+border-image-slice: 20 fill;
+
+/* LARGURA DA IMAGEM NA BORDA */
+
+/* Utilizamos a propriedade border-image-width para definir a largura da nossa imagem sobre a borda */
+border-image-width: 10px;
+/* Podemos tambem aplicar larguras mistas, passando mais de um valor */
+border-image-width: 10px 20px;
+border-image-width: 10px 30px 50px;
+border-image-width: 10px 40px 20px 60px;
+/* Podemos tambem utilizar a palavra reservada auto, para que se ajuste de forma automatica */
+border-image-width: auto;
+
+/* REPETIÇÃO DA IMAGEM NA BORDA */
+
+/* Utilizamos a propriedade border-image-repeat para definir se a imagem deve se repetir ou não para realizar o preenchimento das bordas */
+/* repeat, faz com que a imagem se repita o numero de vezes que for necessario */
+border-image-repeat: repeat;
+/* stretch, faz com que a imagem se estique para ocupar a borda, os pedaços afetados são apenas os 5, 6, 7 e 8 */
+border-image-repeat: stretch;
+/* round, redimencio a imagem para que ela ocupe toda a borda sem que ela fique esticada e nem cortada */
+border-image-repeat: round;
+/* space, altera o espaço entre uma imagem e outra para que ela ocupe o espaço da borda */
+border-image-repeat: round;
+/* Podemos tambem aplicar repetições mistas, passando mais de um valor */
+
+/* ESPAÇAMENTO DA BORDA COM RELAÇÃO AO ELEMENTO */
+
+/* Para definirmos uma distancia da borda com relação ao elemento utilizamos a propriedade border-image-outset */
+border-image-outset: 10px
+/* Podemos tambem aplicar repetições mistas, passando mais de um valor */
+
+/* BORDER-IMAGE */
+
+/* Ao utilizamos esta propriedade sozinha, podemos aplicar todas as outras vistas até agora, pois é como se ele fosse uma forma resumida de utilização, nos valores que é permitido trabalar de forma mista, precisamos utilizar a barra para informar que estamos falando de outro valor e não passando um valor misto */
+border-image:
+    url(caminho_da_imagem) /* Imagem */
+    169 / 10px / 1 /* Slice / Width / Outset */
+    round /* repeat */
+;

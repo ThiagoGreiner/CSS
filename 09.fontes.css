@@ -1,0 +1,61 @@
+/* APLICANDO FONTES */
+
+/* Para aplicar fontes ao nossos textos, utilizamos a propriedade font-family */
+font-family: monospace;
+/* Fontes com espaços, quando as fontes possuem mais de uma palavra e espaço entre elas, colocamos esta fonte entre aspas, para evitar futuros problemas */
+font-family: "Times New Roman";
+/* Fallback, podemos informar multiplas fontes, oque é interessante pois caso aplicarmos uma fonte mas o usuario não possuir ela em sua maquina, o navegador aplicara uma fonte qualquer, assim se tivermos mais de uma opção de fonte é possivel que alguma o usuario possua */
+font-family: monospace, arial;
+
+/* FONTES PERSONALIZADAS */
+
+/* Em alguns casos podemos vir a precisar utilizar fontes que não temos instaladas e que nem o usuario tera, nestes casos é necessario baixarmos o arquivo da fonte, .zip e incluirmos na pasta do nosso projeto assets/fonts/, o arquivo da fonte deve ser .ttf */
+/* Para aplicar fontes personalizadas existe algumas formas, e uma delas é utilizando a regra css chamada de @font-face, que serve como uma configuração que devemos fazer antes de realmente aplicar a fonte utilizando a propriedade font-family */
+@font-face {
+    /* Na configuração font-family precisamos dar um nome para nossa fonte, oque geralemte utilizamos proprio nome da fonte */
+    font-family: Roboto;
+    /* A configuração local não é obrigatória, porem é interessante, pois ele informa que o navegador deve verificar se o usuario já não possui esta fonte instalda, caso possuir ele deve utilizar ela, caso contrario dai deve baixar utilizando a url */
+    /* Na configuração url informamos o caminho do arquivo fonte, oque pode ser de um servidor externo ou uma fonte que esta dentro do nosso projeto */
+    src: local(), url(caminho_da_fonte);
+    /* A configuração font-weight, não é obrigatória, mas podemos utilizar para definir uma espessura para nossa fonte, ou seja, definimos que esta fonte aqui é normal, mas podemos criar uma outra regra css com a mesma fonte Roboto, porem com um font-weight bold e um arquivo de fonte roboto bold, assim estamos dizendo para nosso CSS que quando os textos forem normais eles devem utilizar esta configuração aqui e quando forem textos bold eles devem utilizar a outra configuração */
+    font-weight: normal;
+}
+
+/* IMPORTANDO FOLHAS DE ESTILOS /*
+
+/* As folhas de estilos elas podem tanto estar dentro do nosso projeto quanto podemos importar ela de um outro servidor, o lado possitivo de importala de um outro servidor como o font.google é que caso aconteça alguma alteração, ela ira refletir de forma automatica em nosso projeto */
+/* Para fazer essa importação nós utilizamos as configurações geradas pelo proprio google fontes ou outros sites de fontes, a palavra reservada para esta importação é a @import colocar esta configuração no CSS já podemos utilizar a font no font-family */
+@import
+/* Outra maneira de fazer a importação é utilizando a tag link com todas as configuração que tambem são geradas pelo google fontes, porem esta tag link vai em nosso HTML e dai teriamos que replicar esse link e todas paginas do nosso projeto, desta forma é melhor utilizamos um global.css com todos arquivos globais dentro dele inclusive o @import */
+
+/* TAMANHO DAS FONTES */
+
+/* Para alterar a tamanho das nosas fontes, utilizamos as propriedades font-size, os valores aceitos são des de valores obsolutos a valores relativos */
+font-size: 20px;
+/* xx-small, é uma palavra chave que faz a aplicação de uma fonte bem pequena */
+font-size: xx-small;
+/* x-small, é uma palavra chave que faz a aplicação de uma fonte pequena */
+font-size: x-small;
+/* small, é uma palavra chave que faz a aplicação de uma fonte um pouco maior que a x-small */
+font-size: small;
+/* medium, é uma palavra chave que faz a aplicação de uma fonte média */
+font-size: medium;
+/* large, é uma palavra chave que faz a aplicação de uma fonte grande */
+font-size: large;
+/* x-large, é uma palavra chave que faz a aplicação de uma fonte um pouco maior que a large */
+font-size: x-large;
+/* xx-large, é uma palavra chave que faz a aplicação de uma fonte muito maior*/
+font-size: xx-large;
+/* smaller, se baseia no tamanho da fonte do elemento pai para que seja um pouco menor que ela */
+font-size: smaller;
+/* larger, se baseia no tamanho da fonte do elemento pai para que seja um pouco maior que ela */
+font-size: larger;
+
+/* ESTILO DA FONTE */
+
+/* Para alterar o estilo das nossas fontes, utilizamos a propriedade font-style, que por padrão ela é normal */
+font-style: normal;
+/* italic, utilizamos para deixar nossa fonte no estilo italico */
+font-style: italic;
+/* oblique, utilizamos para deixar nossa fonte no estilo oblique, que é semelhante a italic */
+font-style: oblique;

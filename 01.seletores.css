@@ -1,0 +1,88 @@
+/* SELETOR DE TAG */
+
+/* Seletor por tag, utilizamos o nome das tags */
+h2 {
+
+}
+
+/* SELETOR DE ID */
+
+/* Seletor por id, utilizamos o id das tags */
+#nome_do_id {
+
+}
+
+/* SELETOR DE CLASSES */
+
+/* Seletor por classes, utilizamos a classe das tags */
+.nome_da_class {
+
+}
+
+/* SELETOR DE UNIVERSAL */
+
+/* Seletor universal, utilizamos um * e ele ira selecionar toda página */
+* {
+
+}
+
+/* SELETOR DE ATRIBUTOS */
+
+/* Seletor por atributo, utilizamos [nome_do_atributo_html], isso se aplicara em todas tags que utilizarem um determinado atributo */
+[title] {
+
+}
+/* Podemos utilizar atributos com valor, para isso utilizamos um = seguido do valor do atributo */
+[title="netflix"] {
+
+}
+/* Caso o atributo possua mais de uma palavra e queiramos utilizar somente uma para a estilização, utilizamos o sinal do ~,este fara com que o css procure aquela palavra exata ou ela separada por espaço, exemplo title="streming netflix" e title="streming amazon" */
+[title~=streming] {
+
+}
+/* Da mesma forma que o exemplo acima, utilizamos o sinal do |,este fara com que o css procure aquela palavra exata ou ela separada por -, exemplo title="streming-netflix" e title="streming-amazon" */
+[title|="streming"] {
+
+}
+/* Conseguimos ainda utilizar o seletor de atributos por prefixo, utilizando o sinal ^, utilizamos isto para quando queremos dizer que um atributo deve iniciar com um determinado valor, exemplo href="http://www.netflix.com */
+[href^="https://"] {
+
+}
+/* Conseguimos tambem utilizar o seletor de atributos por sufixo, utilizando o sinal $, utilizamos isto para quando queremos dizer que um atributo deve terminar com um determinado valor, exemplo href="http://www.netflix.com */
+[href$=".com"] {
+
+}
+/* Podemos ainda utilizar o * para procurar uma determinada palavra independente da posição dela no valor do atributo, exemplo href="http://www.netflix.com */
+[href*="netflix"] {
+
+}
+
+/* AGRUPAMENTO DE SELETORES */
+
+/* Podemos agrupar varios seletores e fazer com que um determinado estilo se aplique a todos eles, independente do tipo de seletor, para isso utilizamos a , */
+h1, p, ul {
+
+}
+/* Podemos ainda agrupar seletores de tag com outros tipos como o de classes, exemplo, temos uma tag p com uma class="texto" */
+p.texto {
+
+}
+
+/* COMBINADORES */
+
+/* Combinador descendente, utilizamos para aplicar os estilos somente nos descendentes de um determinado elemento que iremos especificar, para isso basta informarmos o elemento pai seguido de um espaço e o elemento filho  */
+div p {
+
+}
+/* Combinador filho, utilizamos para aplicar os estilos somente nos filhos diretos de um determinado elemento que iremos especificar, para isso basta informarmos o elemento pai seguido de um > e o elemento filho  */
+div > p {
+     
+}
+/* Combinador irmão adjacente, utilizamos para aplicar os estilos somente no irmão seguinte de um determinado elemento que iremos especificar, para isso basta informarmos o elemento irmão adjacente seguido de um + e o elemento irmão  */
+div + p {
+
+}
+/* Combinador irmão geral, utilizamos para aplicar os estilos em todos os irmãos de um determinado elemento que iremos especificar, para isso basta informarmos o elemento irmão seguido de um ~ e o elemento irmão  */
+div ~ p {
+
+}
