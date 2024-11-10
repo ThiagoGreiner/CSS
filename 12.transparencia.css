@@ -1,0 +1,5 @@
+/* OPACIDADE */
+
+/* Utilizando a propriedade opacity podemos definir um nivel de opacidade/transparência para os nossos elementos, este nivel vai se 0 até 1, onde 0 é totalmente transparente e 1 não aplica nada de transparência */
+/* Importante atemtarmos onde estamos aplicando esta opacidade pois ela ira refletir nos seus elementos filhos e caso quisermos aplicar apenas em uma cor de fundo é indicado usarmos o canal alfa conforme indicado na aba cores */
+opacity: 0.5;
