@@ -1,0 +1,24 @@
+/* SOMBRAS NOS ELEMENTOS */
+
+/* Em alguns casos pode ser necessario inserir sombras em nossos elementos, para isso utilizamos a propriedade box-shadow e informamos dois valores, sendo o primeiro que vai indicar a sombra vertical e o segundo que vai indicar a sombra horizontal, tambem é possivel informar valores negativos, oque faz com que a sombra troque a sua orientação */
+box-shadow: 10px 30px;
+/* COR, ainda podemos alterar a cor da nossa sombra após a informação das suas medidas */
+box-shadow: 10px 30px black;
+/* DESFOQUE, para que a sombram não fique de uma cor tão sólida, utilizamos um terceiro valor que vai após as dimenções da sombra e antes da cor */
+box-shadow: 10px 30px 15px black;
+/* PROPAGAÇÃO, como um 4 valor podemos definir a propagação da nossa sombra, ou seja, se ela vai ser menor (valores negativos), se vai estar mais espalhada (valores positivos) ou neutra (zero) */
+box-shadow: 10px 30px 15px -7 black;
+/* SOMBRA INTERNA, geralmente utilizamos a sompra para parecer que o elemento esta saindo da tela, poremos podemos utilizar para dar um ar de que o elemento esta afundado na tela, ou seja, uma sombra interna, para isso utilizamos a palavra reservada inset, que deve ser o primeiro valor */
+box-shadow: inset 10px 30px 15px -7 black;
+/* Podemos ainda fazer uma mescla de sombras utilizando mais de um valor, para isso basta criarmos mais de uma sombra que deve ser separada por virgula */
+box-shadow: 10px 30px 15px -7 black, 10px 30px 15px -7 red;
+
+/* SOMBRA EM IMAGENS */
+
+/* Em algum casos podemos querer adicionar sombras em imagens sem fundo, nestes casos se utilizarmos o box-shadow, ele ira criar como se fosse uma caixa ao redor da imagem para aplicar a sombra, mas se quisermos aplicar a sombra diretamente ao redor da imagem, é necessario utilizar a propriedade filer, e dentro dela utilizar a função drop-shadow */
+filter: drop-shadow(10px 30px 15px black);
+
+/* SOMBRA EM TEXTOS */
+
+/* Para aplicar sombra em nossos textos utilizamos a propriedade text-shadow e ela ira funcionar da mesma forma que a box-shadow, as unicas difereneças é que aqui não temos o inset, não temos a propagação de sombra e tambem caso não informarmos uma cor a nossa sombra, ela ira utilizar a mesma cor da letra */
+text-shadow: 10px 10px 5px black;
