@@ -1,0 +1,14 @@
+/* RESET DOS NAVEGADORES */
+
+/* Como nosso site pode ser aberto em diversos browser diferentes e cada um possui uma configuração CSS diferente, é interessante fazermos um reset no CSS para que a nossa pagina se comporte de maneira igual nos mais diferentes tipos de browsers, para isso temos diversos tipos de resets que podemos pegar prontos na internet ou podemos criar um de ir alterando conforme a necessidade */
+
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0;
+}
+
+/* E para conseguirmos criar um arquivo de reset e não precisar replicar ele em todos os outros arquivos CSS do projeto, podemos utilizar o @import url, assim criamos um arquivo reset e apenas importamos ele nos outros arquivos CSS */
+@import url('.caminho_do_arquivo_reset');
