@@ -46,9 +46,9 @@ font-size: large;
 font-size: x-large;
 /* xx-large, é uma palavra chave que faz a aplicação de uma fonte muito maior*/
 font-size: xx-large;
-/* smaller, se baseia no tamanho da fonte do elemento pai para que seja um pouco menor que ela */
+/* smaller, é relativo e se baseia no tamanho da fonte do elemento pai para que seja um pouco menor que ela */
 font-size: smaller;
-/* larger, se baseia no tamanho da fonte do elemento pai para que seja um pouco maior que ela */
+/* larger, é relativo e se baseia no tamanho da fonte do elemento pai para que seja um pouco maior que ela */
 font-size: larger;
 
 /* ESTILO DA FONTE */
@@ -59,3 +59,52 @@ font-style: normal;
 font-style: italic;
 /* oblique, utilizamos para deixar nossa fonte no estilo oblique, que é semelhante a italic */
 font-style: oblique;
+
+/* GROSSURA DAS FONTES/LETRAS */
+
+/* Para alterar a grossura das nossas fontes utilizamos a propriedade font-weight, esta propriedade vai buscar nas configurações da nossa fonte e vai utilizar conforme estiver la especificado, caso o navegador não encontre nem uma regra ele tentara imitar conforme ele conseguir, esta propiedade aceitar valor de 100 a 900, mas dependera se a fonte tera todo esse suporte */
+font-weight: 400;
+/* Esta propriedade tambem aceita algumas palavras chaves, e por padrão ela é normal */
+font-weight: normal;
+/* bold, isto aplicara oque conhecemos como negrito */
+font-weight: bold;
+/* lighter, é relativo e se baseia na grossura da fonte pai para que ela seja um pouco menos */
+font-weight: lighter;
+/* bolder, é relativo e se baseia na grossura da fonte pai para que ela seja um pouco mais */
+font-weight: bolder;
+
+/* VERSALETE/SMALL CAPS */
+
+/* Faz com que o texto fique todo em maiusculo, porem menor que um texto em caixa alta normal, para isso utilizamos a propriedade font-variant */
+font-variant: small-caps;
+
+/* TEXTO CONDENSADO E EXPANDIDO */
+
+/* Esta propriedade só funciona em fontes que tem essa funcionalidade, então geralmente não é utilizada */
+/* Os valores desta propriedade vão de ultra-condensed até ultra-expanded */
+font-stretch: ultra-condensed;
+font-stretch: extra-condensed;
+font-stretch: semi-condensed;
+font-stretch: normal;
+font-stretch: semi-expanded;
+font-stretch: expanded;
+font-stretch: extra-expanded;
+font-stretch: ultra-expanded;
+
+/* ESPAÇAMENTO DA LINHA */
+
+/* Com a propriedade line-height nos permite altrar o espaçamento entre os textos ou melhor, a altura de uma linha, esta propriedade aceita tanto valores numericos com unidade de medida ou sem unidade de medida e algumas palavras chaves, porem o mais indicado é valores sem unidade de medida, o valor padrão que geralmente é aplicado pelo navegador é 1.2, mas este valor pode alterar de acordo com a fonte que estamos utilizando */
+line-height: 1.2
+line-height: normal
+/* Se utilizarmos % ele ira se basear no tamanho da fonte para aplicar o espaçamento */
+line-height: 100%
+
+/* FONT */
+
+/* A propriedade font aceita algumas das propriedades vistas até agora, sendo a font-style, font-variant, font-height, font-size, font-family e font-wight*/
+font:
+    italic /* Font-style */
+    small-caps /* Font-variant */
+    bold /* Font-weight */
+    24px / 2 /* Font-size / Font-height */
+    Georgia /* Font-family */
