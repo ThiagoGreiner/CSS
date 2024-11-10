@@ -1,0 +1,130 @@
+/* CARACTERES MAISCULOS E MINUSCULOS E ETC */
+
+/* Para aplicar estes efeitos utilizamos a propriedade text-transform que por padrão ela utilza o valor normal */
+text-transform: normal;
+/* capitalize, utilizamos para transformar todos caracteres iniciais do nosso texto em caixa alta */
+text-transform: capitalize;
+/* uppercase, utilizamos para transformar todo o nosso texto em caixa alta */
+text-transform: uppercase;
+/* lowercase. utilizamos para transformar todo o nosso texto em minusculo */
+text-transform: lowercase;
+/* initial, utilizamos para manter o próprio valor da propriedade */
+text-transform: initial;
+/* inherit, é um valor relativo e se baseia no elemento pai para definir o o filho */
+text-transform: inherit;
+
+/* ALINHAMENTO DE TEXTOS */
+
+/* Utilizamos a propriedade text-align para alinhar os textos apenas na horizontal */
+/* left, é basicamente o valor padrão da propriedade e serve para manter o texto alinhado do lado esquerdo */
+text-align: left;
+/* right, utilizamos para alinhar o texto todo a direita do container */
+text-align: right;
+/* center, utilizamos para alinhar ao centro do container */
+text-align: center;
+/* justify, utilizamos para criar um espaçamento justificado, onde o CSS tenta manter o texto todo alinhado sem deixar espaços sobrando */
+text-align: justify;
+
+/* DECORAÇÕES DO TEXTO (POSIÇÃO DAS LINHAS) */
+
+/* Utilizamos a propriedade text-decoration-line para remover ou aplicar linhas em cima, em baixo ou no centro dos textos */
+/* none, utilizamos para retirar o sublinhado ou qualquer outro estilo que esteja aplicado */
+text-decoration-line: none;
+/* underline, utilizamos para adicionar uma linha a baixo do texto */
+text-decoration-line: underline;
+/* line-through, utilizamos para adicionar uma linha no centro do textos */
+text-decoration-line: line-through;
+/* overline, utilizamos para adicionar uma linha sobre o texto */
+text-decoration-line: overline;
+
+/* DECORAÇÕES DO TEXTO (ESTILOS DE LINHAS) */
+
+/* Para definir o estilo da linha que vamos utilizar no texto, usamos a propriedade text-decoration-style que por padrão ela possui o valor solid, oque adiciona uma unica linha continua */
+text-decoration-style: solid;
+/* double, utilizamos para adicionar linhas duplas */
+text-decoration-style: double;
+/* dotted, utilizamos para adicionar uma linha pontilhada */
+text-decoration-style: dotted;
+/* dashed, utilizamos para criar uma linha de pequenos traços */
+text-decoration-style: dashed;
+/* wavy, utilizamos para criar uma linha ondulada */
+text-decoration-style: wavy;
+
+/* DECORAÇÕES DO TEXTO (COR DAS LINHAS) */
+
+/* Por padrão a nossa linha seguira a cor do nosso texto, então utilizamos a propriedade text-decoration-color para alterar a cor da linha */
+text-decoration-color: blue;
+
+/* DECORAÇÕES DO TEXTO (ESPESSURA DAS LINHAS) */
+
+/* Utilizamos a propriedade text-decorarion-thickness para definir a espessura da linha dos nossos textos, esta propriedade aceita diversas unidades de medida */
+text-decoration-thickness: 5px;
+
+/* TEXT-DECORATION */
+
+/* Com o text-decoration podemos agrupar todas as propriedades vistas aqui */
+text-decoration: underline solid red 1px;
+
+/* RECUO NA PRIMEIRA LINHA/IDENTAÇÃO */
+
+/* Para criarmos uma identação na primeira linha do nosso texto utilizamos a propriedade text-iden, esta propriedade aceita diversas unidades de medida, incluindo valores negativos */
+text-indent: 30px
+
+/* ESPAÇAMENTO ENTRE CARACTERES */
+
+/* Para adicionar um espaçamento entre cada caracter do nosso texto, utilizamos a propriedade letter-spacing, por padrão o valor desta propriedade é o normal, mas podemos utilizar tambem valor positivos ou negativos */
+letter-spacing: 20px;
+
+/* ESPAÇAMENTO ENTRE PALAVRAS */
+
+/* Para adicionar um espaçamenti ebtre cada palavra do nosso texto, utilizamos a propriedade word-spacing, por padrão o valor desta propriedade é o normal, mas podemos utilizar tambem valor positivos e negativos */
+word-spacing: 10px;
+
+/* ESPAÇOS EM BRANCO */
+
+/* Podemos tambem definir como irão se comportar os espaços em branco dos textos, para isso utilizamos a propriedade white-space, por padrão o valor desta propriedade é o normal, que aplica apenas um espaço em branco entre as palavras e não faz quebras de linha até que o texto chegue no fim do container */
+white-space: normal;
+/* nowrap, utilizamos para aplicar apenas um espaço em branco entre as palavras e não quebras de linha no texto, mesmo que chegue ao fim do container */
+white-space: nowrap;
+/* pre, utilizamos para manter o texto exatamente conforme ele foi escrito, ou seja, se possuir 5 espaços em branco entre as palavras e algumas quebras de linhas, ele mantera estas configurações mesmo que o texto ultrapasse a largura do container */
+white-space: pre;
+/* pre-line, utilizamos para transformar os espaços entre os texto em apenas um espaço em branco e criar quebras de linha conforme escrito no texto ou caso for necessario de acordo com o tamanho do container */
+white-space: pre-line;
+/* pre-wrap, utilizamos para manter os espaços em branco conforme foi escrito, ou seja, se possuir 5 espaços em branco entre as palavras e algumas quebras de linhas ele ira manter, porem tambem fara quebras de linhas adicionais caso o texto chegue ao fim do container mas se pssuir espaços em branco ultrapassando a largura do container ele mantera */
+white-space: pre-wrap;
+/* break-space, utilizamos para manter os espaços em branco conforme foi escrito, ou seja, se possuir 5 espaços em branco entre as palavras e algumas quebras de linhas ele ira manter, porem tambem fara quebras de linhas adicionais caso o texto chegue ao fim do container */
+white-space: break-space;
+
+/* QUEBRA DE PALAVRAS NO FIM DO CONTAINER (MAIS INDICADO USAR O WORD-BREAK) */
+
+/* Utilizamos a propriedace word-wrap para definir se uma palavra deve ser quebrada e continuar na proxima linha caso chegue ao fim do container, por padrão seu valor é normal e não faz a quebra da palavra */
+word-wrap: normal;
+/* break-word, utilizamos para fazer a quebra da palavra e continuar ela na proxima linha caso ultrapasse a largura do container */
+word-wrap: break-word;
+
+/* QUEBRAS DE LINHA */
+
+/* Utilizamos a propriedade word-break para criar quebras de linha caso a palavra ultrapasse a largura do container, por padrão seu valor é normal, oque não permite a quebra de linhas a menos em espaços e palavras com - */
+word-break: normal;
+/* break-all, faz a quebra de linha caso a palavra seja maior que o container e continua ela na proxima linha, esta propriedade tem pequenos detalhes que são melhores que o break-word do word-wrap */
+word-break: break-all;
+/* keep-all, se comporta como o normal, porem existem algumas linguagens orientais que não permitem a quebra do texto, e o keep-all faz esta identificação, se não se tratar de nem uma destas linguagens ele agira como o normal, caso contrario não fara a quebra de linha */
+word-break: keep-all;
+
+/* ORIENTAÇÃO DO TEXTO */
+
+/* Esta propriedade define se a leitura do texto sera da esquerda para direita ou de cima para baixo como algumas linguagens orientais utilizam, para isso utilizamos a propriedade writing-mode que por padrão possui o valor horizontal-tb, oque faz com que o texto flua da esquerda para direita e a proxima linha ficara abaixo da anterior */
+writing-mode: horizontal-tb;
+/* vertical-rl, aqui o texto flui na vertical, começando de cima para baixo e a proxima linha sera a esquerda da anterior */
+writing-mode: vertical-rl;
+/* vertical-lr, aqui o texto flui na vertical, começando de cima para baixo e a proxima linha sera a direita da anterior */
+writing-mode: vertical-rl;
+
+/* LER MAIS / ... */
+
+/* Em alguns casos o texto pode ultrapassar a largura do container e podemos vir a precisar esconder ele sem criar um scroll, e então precisaremos mostrar para o usuario que temos mais texto para ser lido, para isso utilizamos a propriedade text-overflow, por padrão ela utiliza o valor clip que apenas mandem o texto cortado e escondido */
+text-overflow: clip;
+/* ellipsis, coloca três pontinhos no final do nosso texto para informar que existe mais texto para ser lido */
+text-overflow: ellipsis;
+/* string, permite informarmos um texto personalizado para mostrar ao usuario que tem mais texto a ser lido, porem esta funcionalidade só funciona na navegador do firefox */
+text-overflow: 'Ler mais >';
