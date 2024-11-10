@@ -120,6 +120,20 @@ writing-mode: vertical-rl;
 /* vertical-lr, aqui o texto flui na vertical, começando de cima para baixo e a proxima linha sera a direita da anterior */
 writing-mode: vertical-rl;
 
+/* CONTROLE DE EXIBIÇÃO / OVERFLOW */
+
+/* Utilizamos esta propriedade para definir como nosso conteudo deve se comportar caso ele ultrapasse os limites do container, por padrão esta propriedade utiliza o valor visible, oque faz com que o conteudo não seja cortado e acabe ultrapassando o container */
+overflow: visible;
+/* hidden, com este valor o nosso conteudo que ultrapassa o container é cortado, não ficando mais possivel visualiazr */
+overflow: hidden;
+/* scroll, com este valor o nosso conteudo que ultrapassa o container é cortado porem é criado um scroll no container, para que ainda seja possivel visualizar o conteudo */
+overflow: scroll;
+/* auto, com este valor o css verifica se o conteudo é maior que o container e se sim, ele corta o conteudo e adiciona um scroll no container */
+overflow: auto;
+/* Ainda temos opções de especificar o eixo no qual queremos que determinada ação aconteça, para isso utilizamos o overflow-y e overflow-x */
+overflow-y hidden:
+overflow-x auto:
+
 /* LER MAIS / ... */
 
 /* Em alguns casos o texto pode ultrapassar a largura do container e podemos vir a precisar esconder ele sem criar um scroll, e então precisaremos mostrar para o usuario que temos mais texto para ser lido, para isso utilizamos a propriedade text-overflow, por padrão ela utiliza o valor clip que apenas mandem o texto cortado e escondido */
