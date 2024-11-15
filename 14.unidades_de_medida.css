@@ -1,0 +1,52 @@
+/* UNIDADES DE MEDIDAS ABSOLUTAS */
+
+/* As unidades de medidas absolutas são aquelas que não estão atreladas a nem um valor de referência, ou seja, não dependem de nem um outro valor para serem calculados
+
+Algumas unidades de medidas são
+
+cm - centimetros
+mm - milimetros
+Q - quarto de milimetro
+in - polegada
+pc - paica
+pt - pontos
+px - pixels
+
+ Estas unidades de medidas são fixas e não se alteram de acordo com o dispotivos ou de acordo como tamanho de outro elemento
+
+ Pixel - É a unidade de medida mais comum e mais utilizada no css. */
+
+/* UNIDADES DE MEDIDAS RELATIVAS */
+
+/* As unidades de medidas relativas são calculadas com base no valor de outro elemento, assim os valores podem variar
+
+Estas unidades de medidas são bastante utilizadas para desenvolvimento de sites responsivos
+
+Algumas unidades de medidas são
+
+% - A porcentagem é uma unidade que irá utilizar como referência o elemento pai, para se basear, podendo alterar os resultados de acordo com o lugar que em que está inserido
+
+em - A unidade de medida em, quando utilizada para definir o tamanho da fonte de um elemento, vai utilizar como referência o valor da propriedade font-size do elemento pai no qual está inserido e multiplicar pelo valor que estamos passando
+Caso seja utilizado a unidade em para outras propriedades que não sejam o tamanho da fonte do elemento, o resultado será em relação ao tamanho da fonte do próprio elemento em que esta sendo definida a propriedade e então multiplicar pelo valor que estamos passando
+
+rem - o rem (root em) tem um funcionamento semelhante á unidade de medida em, porém a diferença é que, enquanto o em utiliza o elemento pai como referência, o rem está relacionado ao tamanho da fonte do elemento raiz, chamado de root, que no caso é a tag html
+
+Viewport - é a área visivel de uma página web, podendo variar de dispositivo para dispositivo. As unidades de medida viewport, vão ser calculadas em relação ao tamanho da a área em que o usuário está vendo sua página e não em cima do elemento pai
+1vw = 1% do tamanho da largura da área visivel da página
+1vh = 1% do tamanho da altura da área visivel da página
+vmin = É calculado em cima do menor valor com relação a altura e largura
+vmax = É calculado em cima do maior valor com relação a altura e largura
+
+ex - Esta unidade de medida irá usar o tamanho da altura do caractere X (em minúsculo) da fonte do elemento para multiplicar pelo valor ex informado
+O valor especificado altera quando a fonte for completamente alterada
+
+ch - É uma unidade de medida que possui como referência o caractere 0 da fonte que está sendo utilizada no elemento
+Caso a fonte do elemento seja uma fonte mono-espaçada, ao utilizada a unidade de medida ch, estamos definindo quantos caracteres devem caber no elemento */
+
+/* CALC
+
+Podemos tambem fazer calculos dentro do nosso CSS, e isto nos permite utilizar tanto as unidades de medidas obsolutas quanto as relativas para realizar o calculo e chegar a um determinado valor 
+
+width: calc(2rem + 30px);
+
+*/
