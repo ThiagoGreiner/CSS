@@ -99,8 +99,8 @@ background-clip: text;
 
 /* Por padrão essa atributo vem com o valor normal, mas podemos alterar conforme a necessidade */
 background-bled-mode: normal;
-/* multiplay, este valor permite utilizamos uma imagem e alterarmos a cor dela utilizando o background-color */
-background-bled-mode: multiplay;
+/* multiply, este valor permite utilizamos uma imagem e alterarmos a cor dela utilizando o background-color */
+background-bled-mode: multiply;
 /* screnn, este valor deixa a imagem mais iluminada */
 background-bled-mode: screen;
 /* overlay, este valor permite utilizamos uma imagem e alterarmos a cor dela utilizando o background-color */
