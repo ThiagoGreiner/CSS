@@ -1,0 +1,35 @@
+/* POSICIONAMENTO DE ELEMENTOS EM TELA
+
+Para posicionar os elementos em tela, podemos utilizar a propriedade position
+
+static - É o valor padrão da propiedade e faz com que os elementos sigam o fluxo padrão da pagina, ou seja, na ordem como foram escritos
+position: static;
+
+relative - Visualmente ele funciona da mesma forma que o static, porem em um elemento relative, podemos utilizar 4 propriedades que permitem deslocar o elemento na pagina (top, botton, left, right)
+position: relative;
+top: 10px
+Isso faria com que descesse, ou seja, o elemento se deslocaria 10px do top
+
+absolute - este posicionamento faz com que o elemento sai do fluxo padrão da pagina, ignorando totalmente a posição dos outros elementos na pagina, pode ser utilizado quando queremos sobrepor outros elementos da pagina
+Caso queiramos que o elemento seja obsolute mas apenas dentro de um determinado container, esse container que é pai do elemento, deve ser position relative
+E alem disso tambem podemos utilizar 4 propriedades que permitem deslocar o elemento na pagina (top, botton, left, right)
+position: obsolute;
+
+fixed - este posicionamento faz com que o elemento sai do fluxo padrão da pagina, ignorando totalmente a posição dos outros elementos na pagina, isto faz com que o elemento fique fixo na pagina e acompanhe o scroll
+Alem disso tambem podemos utilizar 4 propriedades que permitem deslocar o elemento na pagina (top, botton, left, right)
+position: fixed;
+
+sticky - este posicionamento faz com que o elemento se comporte como se fosse position relative mas ao fazer o scroll o elemento ira se comportar como position fixed, porem para este posicionamento funcionar, é obrigatório que tenha junto a ele um posicionamento, ou seja, o elemento mantera sua posição até que o scroll alcanse a posição informada, assim que alcançada, o elemento passara a acompanhar o scroll
+position: sticky;
+top: 0;
+*/
+
+/* EIXO Z / CAMADAS
+
+É possivel alterarmos a posição dos elementos no eixo z, ou seja, em qual camada eles estarão
+Por padrão o eixo z dos elementos é 0, sendo assim se tivermos varios elementos empilhados eles seguirão a ordem que foram postos no HtML, sendo o ultimo colocado, o mais de cima e o primeiro colado o mais de baixo
+Porem por exemplo, se utilizarmos a propriedade z-index no primeiro elemento HTML (ultimo elemento do eixo z), e definirmos para ela o valor de 1, agora ela passaria a ser o primeira do eixo z
+z-index: 1;
+Ou seja, quando maior o numero do elemento no z-index, mais a cima do eixo ele estara
+Esta propriedade só não funciona no position static
+*/
