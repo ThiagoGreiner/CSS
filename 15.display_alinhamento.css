@@ -1,0 +1,331 @@
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
+/* PROPRIEDADE DISPLAY
+
+Para o CSS todo elemento HTML é uma caixinha retangular, e o display serve para definir como essa caixinha ira se comportar em uma pagina
+
+block - quando um elemento é display block, quer dizer que ele ira ocupar uma linha inteira da pagina, agluns exemplos de elementos que já vem com esse padrão, são as tags div e p
+
+display: block;
+
+inline - quando um elemento é display inline, quer dizer que ele ira ocupar o espaço somente referente a o conteudo que tem dentro dele, agluns exemplos de elementos que já vem com esse padrão, são as tags span, em e b
+É importante atentarmos que quando o elemento for display inline, ele não ira obedecer os atributos width e height e os atributos margin e padding irão funcionar somente no eixo vertical
+
+display: inline;
+
+inline block - quando um elemento é display inline-block, quer dizer que ele ira ocupar o espaço somente referente a o conteudo que tem dentro dele, porem diferente do inline ele obedece aos atributos width e height e a os atributos margin e padding
+
+display: inline-block;
+
+*/
+
+/* ESCONDENDO ELEMENTOS
+
+none - quando precisamos esconder elementos da nossa pagina, podemos utilizar o display none, porem vale lembrar que ele é escondido apenas visualmente, pois ele continuara aparecendo no dom
+
+display: none;
+
+hidden - quando precisamos esconder elementos da nossa pagina, tambem podemos utilizar o visibility hiddem, porem a grande diferença entre ele e o none, é que o hidden esconde o elemento mas mantem o espaço dele na tela
+
+visibility: hidden;
+
+*/
+
+/* ALINHAMENTO DE ELEMENTOS INLINE
+
+Horizontal - Para alinhar elementos inline na horizontal, podemos utilizar o atributo text-align
+
+text-align: center;
+
+Vertical - Para alinhar elementos inline na vertical, podemos utilizar o atributo vertical-align, este atributo aceita alguns valores como top, botton, middle(utilizado para centralizar), baseline(semelhante ao botton, pos faz o alinhamento inferior, porem no caso de textos ele deixa as pernas de algumas letras como p a baixo da linha), text-bottom (igual ao bottom, alinhamento inferior e respeita as pernas que algumas letras possuem), text-top (igual ao top), sub (alinha sobre a linha), super (alinha acima da linha superior)
+
+vertical-align: top
+
+*/
+
+/* CONCEITOS FLEXBOX
+
+O flexbox permite posicionar os elementos dentro de outro elemento (container)
+Os elementos dentro do container são chamados de itens
+
+flexbox quer dizer Flexibile Box Module e ofere uma maneira mais eficiente de organizar, alinhas e distribuir o espaço entre itens do container, mesmo que o tamanho do elemento seja dinâmico
+
+Para tornar os ites de um container flexivel, utilizamos a propriedade display flex no container
+
+display: flex;
+
+Alem de tornar os itens do container flexiveis, caso seja necessario transformar o container em inline, dai podemos utilizar o display inline-flex
+
+display: inline-flex
+
+*/
+
+/* FLEXBOX -> FLEXDIRECTION / DIREÇÃO DOS ELEMENTOS
+
+Após tornar o nosso container flexivel, precisamos definir o sentido dos seus eixos, para entender melhor, nosso container possui dois eixos, sendo o principal e o transversal
+Para deixarmos o eixo principal no sentido horizontal, utilizamos a propriedade flex-direction row, por padrão o eixo vertical fica no sentido horizontal em quanto o tranversal fica na vertical
+Isso fara com que os itens dentro do container iniciem da esquerda para direitra, ou seja, fiquem em colunas
+
+flex-direction: row;
+
+Podemos ainda alterar o sentido do eixo principal, ou seja, mantendo ele como row porem ao inves de começar da esquerda para direita, ele começara da direita para esquerda
+
+flex-direction: row-reverse
+
+(O sentido não é uma regra, normalmente ele começara da esquerda para a direita e seu reverse sera da direita para esquerda, pore este sentido se baseia no sentido da escrita, ou seja, se a escrita que tivermos utilizando for uma escrita mais comum como portugues ou ingles, ok, porem se tivermos utilizando uma escrita oriental como por exemplo o arabe, o sentido da escrita se alterara da direita para esquerda, oque faz com que o flex-direction tambem se altere)
+
+Agora caso seja necessario alterar a posição do eixo principal para o sentido vertical, podemos utilizar a propriedade flex-direction column
+Isso fara com que os itens dentro do container iniciem de cima para baixo, ou seja, fiquem em linhas
+
+flex-direction: column;
+
+Podemos ainda alterar o sentido do eixo principal, ou seja, mantendo ele como column porem ao inves de começar de cima para baixo, ele começara de baixo para cima
+
+flex-direction: column-reverse
+
+*/
+
+/* FLEXBOX -> FLEX WRAP / QUEBRA DE LINHA/COLUNA
+
+Quando utilizamos o display flex em um container, pode acontecer de os itens (filhos destes container), ultrapassarem as medidas do container por não caberem daquele espaço determinado, porem para resolver isso e fazer com que os itens façam a quebra de linha/coluna, utilizamos a propriedade flex-wrap wrap
+
+flex-wrap: wrap;
+
+Por padrão o valor desta propriedade é nowrap, por isso acontece dos itens não fazerem a quebra de linha/coluna
+
+flex-wrap: nowrap;
+
+Ainda nesta propriedade podemos utilizar tambem o valor wrap-reverse, isto fara com que o sentido das linhas/colunas se alterem
+*/
+
+/* FLEXBOX -> FLEXFLOW / SHORTHAND DO FLEX-DIRECTION E DO FLEX-WRAP
+
+Como mencionado anteriormente no flex-direction e no flex-wrap, o valor deste elemento é row nowrap, porem podemos combinar outros valores destas propriedades utilizando o flexflow
+
+flexflow: column wrap
+
+*/
+
+/* ALINHAMENTO DOS ITENS DO CONTAINER NO EIXO PRINCIPAL
+
+O flexbox nos permite fazer o alinhamento dos nossos itens na pagina com relação ao eixo principal, para isso utilizamos o justify-content
+
+flex-start - É o valor padrão da propriedade e vai alinhar os itens na posição inicial da direção que foi definida no direction
+
+justify-content: flex-start;
+
+flex-end - este valor vai alinhar os itens no fim/posição reversa da posição inicial que foi definida no direction
+
+justify-content: flex-end;
+
+center - este valor vai centralizar os itens idependente da posição definida
+
+justify-content: center;
+
+space-between - este valor distribui os itens na linha, sendo que o primeiro e o ultimo ficaram totalmente grudados em suas bordas e os demais ficaram distribuitos igualmente entre eles
+
+justify-content: space-between;
+
+space-around - este valor tambem distribui os itens na linha de forma igual, onde todos itens fiquem com o mesmo espaçamento entre eles, e o primeiro e ultimo item fiquem com a metade deste espaçamento com relação a borda deles (ou seja, caso o espaçamento entre os itens, seja de 20px, o espaçamento do primeiro e ultimo item com relação a borda, sera de 10px)
+
+justify-content: space-around;
+
+space-evenly - este valor tambem distribui os itens na linha de forma igual, onde todos itens fiquem com o mesmo espaçamento entre eles, inclusive o primeiro e ultimo item com relação a borda
+
+justify-content: space-content;
+*/
+
+/* ALINHAMENTO DOS ITENS DO CONTAINER NO EIXO TRANSVERSAL
+
+O flexbox nos permite fazer o alinhamento dos nossos itens na pagina com relação ao eixo transversal, para isso utilizamos o align-items
+
+strech - É o valor padrão da propriedade e vai fazer com que os itens se estiquem para ocupar todo o container, porem se haver width ou height definidos para estes itens, este valor não tera efeito
+
+aling-itens: strech;
+
+flex-star - este valor alinhara os itens no inicio do eixo transversal de acordo com o direction definido
+
+aling-itens: flex-star;
+
+flex-end - este valor vai alinhar os itens no fim/posição reversa da posição inicial que foi definida no direction
+
+aling-itens: flex-end;
+
+center - este valor ira centralizar os itens no eixo transversal
+
+aling-itens: center;
+
+baseline - esta valor pega o texto que possui dentro dos itens e utiliza a base deste texto para alinhar os itens no eixo transversal
+
+aling-itens: baseline;
+
+*/
+
+/* ALINHAMENTO DAS LINHAS/COLUNAS DO CONTAINER NO EIXO TRANSVERSAL
+
+Estes valores só teram efeito em containers flexiveis que possuem mais de uma linha/coluna, para isso utilizamos a propriedade align-content
+
+normal - Este é o valor padrão da propriedade e mantme os itens em suas posições padrão, sem nem um efeito
+
+align-content: normal;
+
+flex-star - esta valor faz com que as linhas/colunas se alinhem na posição inicial do eixo vertical
+
+aling-content: flex-star;
+
+flex-end - esta valor vai alinhar as linhas/colunas no fim/posição reversa da posição inicial do eixo vertical
+
+aling-content: flex-end;
+
+center - este valor vai centralizar as linhas e colunas
+
+aling-content: center;
+
+stretch - este valor vai fazer com que as linhas/colunas se estiquem para ocupar todo o container, porem se haver width ou height definidos para estas, este valor não tera efeito
+
+aling-content: stretch
+
+space-between - este valor distribui as linhas/colunas, sendo que a primeira e a ultima ficaram totalmente grudados em suas bordas e as demais ficaram distribuitas igualmente entre elas
+
+aling-content: space-between;
+
+space-around - este valor tambem distribuira as linhas/colunas de forma igual, onde todas fiquem com o mesmo espaçamento entre elas, e a primeira e ultima fiquem com a metade deste espaçamento com relação a borda delas (ou seja, caso o espaçamento entre as linhas/colunas, seja de 20px, o espaçamento da primeira e ultima com relação a borda, sera de 10px)
+
+aling-content: space-around;
+
+*/
+
+/* ESPAÇAMENTO ENTRE ITENS DO CONTAINER
+
+Para controlar o espaçamento entre os itens do nosso container podemos utilizar as propriedades row-gap, column-gap ou o shorthand gap
+
+row-gap: 10px;
+column-gap: 20px
+gap: 30px;
+
+*/
+
+/* PROPRIEDADES VOLTADAS PARA OS ITENS */
+
+/* ORDENANDO OS ITENS NO CONTAINER
+
+Uma outra propriedade que o flex-box oferece é trocar a posição dos itens no container sem alterar o HTML, para isso utilizamos a propriedade order e por padrão o valor desta propriedade é 0
+Se todos itens possuirem a propriedade order no valor 0 ou iguais, eles seguiram a ordem que estão no HTML, porem caso seja definido valores a propriedade, o item com o valor mais baixo sempre sera o primeiro a ser exibido e o com o valor mais alto o ultimo, lembrando que esta propriedade aceita numeros negativos
+
+order: -1;
+order: 10;
+
+*/
+
+/* PREENCHIMENTO DO ESPAÇO VAZIO
+
+A propriedade flex-grow da para nossos itens a possbilidade deles crescerem utilizando o espaço vazio do eixo principal, os valores informados nesta propriedade são valores proporcionais, ou seja, 1(padrão), 2(dobro), 3(triplo) ..., são valores que informam quanto queremos que o item cresça
+O crescimento dos itens levara em consideração o conteudo dentro do mesmo
+Esta propriedade fara com que o item não respeite as propriedades width e heigth caso elas estejam aplicadas, a menos que o valor do flex-grow seja passado como 0
+Por outro lado item continuara respeitando as propriedades max-width e max-heigth idependente do valor que o flex-grow possuir
+Se o valor passado for 0, isso fara com que o item não cresça mais que o tamanho definido
+
+flex-grow: 2;
+
+*/
+
+/* ADAPTAÇÃO A ESPAÇOS REDUZIDOS
+
+Esta propriedade flex-shrink faz o controle de quanto o item podera diminuir para caber dentro do container caso seja necessário, aqui os valores tambem são informados de forma proporcional, ou seja, 1(padrão), 2(dobro), 3(triplo) ..., porem quando maior o valor mais o item ira diminuir
+Esta propriedade fara com que o item não respeite as propriedades width e heigth caso precisem encolher e elas estejam aplicadas, a menos que o valor do flex-shrink seja passado como 0
+Por outro lado item continuara respeitando as propriedades min-width e min-heigth idependente do valor que o flex-shrink possuir, tambem sera respeitado o conteudo dos dos itens, fazendo que o item não diminua excessivamente
+
+flex-shrink: 2;
+
+*/
+
+/* TAMANHO INICIAL DOS ITENS
+
+Esta propriedade define um valor de tamanho inicial para os itens, ou seja, já que as propriedades width e higth não funcionam com o grow e o shrink, podemos utilizar a propriedade flex-basis
+
+Esta propriedade aceita diversas unidades de medidas e ira crescer no eixo principal porem ela sempre respeitara o min/max width e heigth
+
+flex-basis: 500px;
+
+Tambem podemos utilizar nesta propriedade o valor auto, isto fara com que ele verique o valor width ou height que tem para esta propriedade(dependera de qual eixo esta utilizando) e então utilize este valor
+
+flex-basis: auto;
+
+Caso o valor do flex-basis seja 0, sera retirado os espaços entre nossos conteudos e sera feito a quebra de linha para diminuir ainda mais o espaço do nosso item
+
+flex-basis: 0;
+
+Tambem são aceitas como valores, palavras chaves como min-content, que pega o minimo do conteudo que o item possui(a maior palavra por exemplo) e define uma medida minima para o item fazendo quebras de linha
+
+flex-basis: min-content;
+
+Tambem temos o max-content, que pega o maximo do conteudo mantendo ele apenas em uma linha e com base nisto define uma medida para o item
+
+flex-basis: max-content;
+
+*/
+
+/* SHORTHAND FLEX 
+
+Geralmente as propriedades grow, shrink e basis são utilizadas em conjunto e para facilitar podemos utilizar o shorthand com o atributo flex
+Os valores devem ser passados exatamente nesta ordem, grow, shrink e basis
+
+flex: 2 1 auto;
+
+Porem dentro do flex temos alguns valores pré definidos, e que podem ser acessados através de palavras reservvadas
+
+initial - Este valor equivale a um flex 0 1 auto
+
+flex: initial;
+
+auto - Este valor equivale a um flex 1 1 auto
+
+flex: auto;
+
+none - Este valor não é tão utilizado pois deixa nosso flex item não flexivel pois ele equivale a um flex 0 0 auto
+
+flex: none;
+
+1 - Este valor equivale a um flex 1 1 0
+
+flex: 1;
+
+2 - Este valor equivale a um flex 2 1 0 e assim sucessivamente 
+
+flex: 2
+
+Uma unidade de medida - ira alterar apenas basis e o resto sera 0
+
+flex: 20px; (flex 0 0 20px)
+
+Um valor proporcional mais uma unidade de medida - O primeiro valor apontara para o grow e o segundo para o basis
+
+flex: 1 20px; (flex 1 0 20px)
+
+*/
+
+/* ALINHAMENTO INDIVIDUAL DE ITENS 
+
+A propriedade aling-self permite sobrescrever o alinhamento padrão aplicado em todos os itens de forma geral que foi definida pela propriedade aling-items
+
+strech - este valor vai fazer com que os itens se estiquem para ocupar todo o container, porem se haver width ou height definidos para estes itens, este valor não tera efeito
+
+aling-self: strech;
+
+flex-star - este valor alinhara o item no inicio do eixo transversal de acordo com o direction definido
+
+aling-self: flex-star;
+
+flex-end - este valor vai alinhar o item no fim/posição reversa da posição inicial que foi definida no direction
+
+aling-self: flex-end;
+
+center - este valor ira centralizar o item no eixo transversal
+
+aling-self: center;
+
+baseline - esta valor pega o texto que possui dentro do item e utiliza a base deste texto para alinhar o item no eixo transversal
+
+aling-self: baseline;
+
+*/
