@@ -1,0 +1,448 @@
+/* 
+    https://www.w3schools.com/css/css_grid.asp
+
+    https://css-tricks.com/snippets/css/complete-guide-grid/
+
+*/
+
+/* GRID
+
+Diferente do flex-box, o grid nos permite trabalar com linhas e colunas ao mesmo tempo 
+
+GRID CONTAINER
+
+Aqui o elemento pai tera a propriedade display flex especificada e ele ira envolver todos os itens do grid
+
+GRID ITEM
+
+Elementos que são filhos direto do grid container
+
+GRID COLUMNS
+
+São as faixas verticais dos itens do grid, são chamados de colunas (grid columns)
+
+GRID ROWS 
+
+São as faixas horizontais dos itens do grid, são chamadas de lihas (grid rows)
+
+GRID GAPS
+
+São os espaços entre as linhas (grid rows) e coluna (grid columns) do grid, ponto onde as linhas e colunas se cruzam
+
+GRID LINE
+
+São as divisórias que compõem a estrutura da grade. As linhas entre as colunas são chamadas de column lines (linhas de coluna) e, as que estão entre as faixas horizontais, são chamadas de row lines (linhas de linha)
+
+GRID CELL
+
+São as celulas, ou seja, cada "quadrado" da grade, que vai entre um grid line e outro
+
+*/
+
+/* GRID CONTAINER 
+
+Para aplicar o grid em um container, utilizamos a propriedade display acompanhada do valor grid, este valor cria no/nos containers um grid
+
+    display: grid;
+
+Porem podemos tambem utilizar a propriedade display seguida do valor inline grid, a diferença é que com este valor todos irmão deste container se tornam inline e grid, ou seja, ocuparam a mesma linha respeitando os seus tamanahos predefinidos
+
+    display: inline grid;
+
+*/
+
+/* ADICIONANDO COLUNAS E LINHAS
+
+Para criarmos colunas em nosso container grid, utilizamos a propriedade grid-template-columns seguido dos valores(largura - são aceito diversas unidades de medida) de cada coluna
+Para criarmos mais de uma coluna, basta definirmos mais de um valor, e os valores devem ser separados por espaços
+
+    grid-template-columns: 200px 300px 100px;
+
+Para criarmos linhas em nosso container grid, utilizamos a propriedade grid-template-rows seguido dos valores(altura - são aceito diversas unidades de medida) de cada linha
+Para criarmos mais de uma linha, basta definirmos mais de um valor, e os valores devem ser separados por espaços
+
+    grid-template-rows: 200px 300px 100px;
+
+Conforme visto, são aceitos diversas unidade de medidas, porem para ter um design mais flexivel podemos utilizar uma unidade de medida especifica que é o fr, esta unidade de medida representa uma fração do espaço que temos disponivel na pagina, assim a largura das colunas vão crescer e diminuir conforme a pagina, esta unidade de medida só funcionara nas linhas caso o container já tenha uma altura(heigth) definida
+
+    grid-template-columns: 1fr 2fr 1fr;
+
+Podemos criar nomear as linhas e colunas durante a sua criação, para isto utilizamos chaves com o nome desejado dentro delas e seguido disso o valor da coluna/linha
+
+    grid-template-columns: [primeira-coluna] 1fr [segunda-coluna] 2fr [terceira-coluna] 1fr [Quarta-coluna];
+
+Podemos ainda criar repetições na criação de linhas e colunas, isto é muito util quando tempos diversas colunas ou linhas que precisam ser criadas, para não definir o valor destas colunas/linhas diversas vezes, utilizamos a função repeat seguida de dois valores, o primeiro vai dizer quantas vezes deve repetir e o segundo qual o valor(medida)
+
+    grid-template-rows: repeat(3, 1fr);
+
+Podemos tambem mesclarar o repeat com outros unidades de medidas normais
+
+    grid-template-columns: 200px repeat(3, 1fr) 100px;
+
+Podemos ainda criar uma repetição com mais de uma coluna, para isso basta passarmos mais de um valor
+
+    grid-template-rows: repeat(3, 1fr 2fr);
+
+Existe tambem algumas palavras chaves na função repeat e podemos utilizalas sozinhas ou para combinar com outras unidades de medida
+auto-fill - ajusta o maior numero possivel de colunas em uma só linha de acordo com o valor definido, mesmo que fiquem colunas vazias
+
+    grid-template-columns: repeat(auto fill, 100px);
+
+auto-fit - ajusta um numero de colunas em uma só linha de acordo com a quantidade de itens que tem para ocupar estas colunas
+
+    grid-template-columns: repeat(auto fit, 100px);
+
+min-content - esta valor vai deixar a coluna com o minimo do conteudo dos itens, ou seja, ela pegara o item que tem o maior conteudo naquela coluna e vai definir a largura deste conteudo para a coluna, em casos de texto sera feito a quebra de linha
+
+    grid-template-columns: min-content;
+
+max-content - esta valor vai respeitar atribuir a coluna a medida do item que tem o maior conteudo, e em caso de texto não tera quebra de linha
+
+    grid-template-columns: max-content;
+
+auto - este valor é semelhante ao 1fr, porem em colunas que possuam item com um maior conteudo ele ira aplicar uma largura um pouco maior, em caso de utilizar esta medida com a fr ela ira se perder no calculo e as colunas que ficarem com o valor alto irão ter como largura somente equivalente ao valor do conteudo
+
+    grid-template-columns: auto;
+
+Podemos tambem utilizar a função minmax, assim a coluna/linha se ajusta conforme o tamanho do conteudo do item e ao mesmo tempo possui um valor minimo e maximo, e se utilizarmos o valor alto ela ira se esticar conforme o tamanho do conteudo do item
+
+    grid-template-columns: minmax(100px, 200px) minmax(100px, auto)
+
+Podemos tambem misturar a função repeat juntamente com a minmax
+
+    grid-template-columns: repeat(3, minmax(100px, 200px));
+
+*/
+
+/* GRID IMPLICITO E EXPLICITO
+
+Grid explicito são aqueles que são criados por nós, através do grid-template-columns/rows
+Porem a casos onde temos 7 itens por exemplo, temos 3 colunas, e 2 linhas, ou seja, na primeira linha teremos 3 items, um em cada coluna e na segunda linha da mesma forma, porem ainda assim faltara espaço para mais um item, é ai que o css cria mais uma linha/coluna, e isso nós chamamos de grid implicito, porem essa nova linha/coluna tera sempre um tamanho proporcional ao conteudo dela
+Mas podemos definir um tamanho para ela utilizando a propriedade grid-auto-rows seguinda de um valor, isso fara com que sempre que for criado um grid implicito, ele respeite aquele tamanho que foi definito nesta propriedade
+
+    grid-auto-rows: 2fr;
+
+Podemos tambem definir um valor minimo e maximo para esses grids implicitos, para isso utilizamos a função minmax, assim a linha tera um valor minimo e maximo de crescimento, esta função possui dois valor, sendo que o primeiro apontara para o tamanho minimo e o segundo para o tamanho maximo
+
+    grid-auto-rows: minmax(100px, 150px)
+
+Podemos ainda utilizar o valor auto como valor max, assim item acompanhara o valor do seu conteudo porem respeitando o valor minimo
+
+    grid-auto-rows: minmax(100px, auto)
+
+Por padrão os grids implicitos são criados em novas linhas, porem podemos alterar isso utilizando a propriedade grid-auto-flow, como mencionado o valor padrão é row, porem caso necessario podemos mudar para column e então os grids implicitos passarão a ser criados em colunas
+
+    grid-auto-flow: columns
+
+Ainda nesta propriedade temos o valor dense, este valor faz com que o grid se ajeite no container da melhor forma para que ocupe todas colunas e linhas, porem esse valor não é muito utilizado pois ele tira o html da sua ordem padrão
+
+*/
+
+/* ALOCANDO OS ITENS EM POSIÇÕES ESPECÍFICAS
+
+VIA GRID LINE
+
+Para fazer o posicionamento dos itens nós nos baseamos no grid line, ou seja temos que dizer em qual coluna/linha um item deve começar e em qual coluna/linha deve terminar
+Para isso utilizamos as propriedades abaixo diretamente no item que queremos posicionar
+No exemplo a baixo teriamos um gride com 5 colunas e 2 linhas, ou seja, o item estara centralizado na parte superior. As posições estão baseadas no grid line 
+
+    grid-column-star: 2;
+    grid-column-end: 5;
+
+    grid-row-star: 1;
+    grid-row-end: 3;
+
+VIA GRID CELL
+
+Podemos tambem fazer o posicionamento de um item com base no grid cell, para isso utilizamos a palavra reservada span, seguida do numero de celulas que devem ser ocupadas por aquele item
+No exemplo a baixo teriamos um gride com 5 colunas e 3 linhas, ou seja, o item estara no canto esquerdo da parte inferior
+
+    grid-column-star: 1;
+    grid-column-end: span 3;
+
+    grid-row-star: 2;
+    grid-row-end: span 2;
+
+VIA NOME DAS LINHAS
+
+Tambem podemos fazer o posicionamento de um item utilizando o nome que determinamos para as linhas e colunas
+No exemplo a baixo teriamos um gride com 5 colunas e 3 linhas, ou seja, o item estara no canto esquerdo da parte inferior
+
+    grid-column-star: segunda-coluna;
+    grid-column-end: quinta-coluna;
+
+    grid-row-star: primeira-linha;
+    grid-row-end: terceira-linha;
+
+Podemos tambem fazer um shorthand utilizando estas mesmas propriedades porem retirando o star e end do final, para isso a propriedade exigira dois valores, onde o primeiro representara o star e o segundo o end, os valores devem ser separados por barra
+
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 2;
+
+GRID ÁREA
+
+Através desta propriedade conseguimos definir 4 valores grid-column-star, grid-column-end, grid-row-star, grid-row-end e devem ser passados da seguinte ordem
+
+    grid-area: grid-row-star / grid-column-star / grid-row-end / grid-column-end
+
+NOMEANDO AREAS
+
+Podemos tambem nomear as áreas do grid e posicionar os itens dentro das áreas específicas as referenciando através do nome, para fazer isso utilizamos a propriedade grid-template-areas seguida dos valores(nomes)
+Os nomes devem ser atribuidos dentro de aspas, e cada aspas representa uma linha, e cada nome uma coluna, ou seja, se tivermos um grid de 4 colunas e 3 linhas, teremos 3 aspas e 12 nomes
+Caso quisermos deixar um celula sem nome, utilizamos um ponto no lugar do nome
+Para posicionar os itens basta utilizar o grid area diretamente no item com o nome da posição
+
+    grid-template-areas: "header header header header" "main main . sidebar" "footer footer footer footer"
+
+SHORTHAND
+
+Ainda temos a propriedade grid-template, que funciona como um shorthand das propriedades grid-row, grid-column e grid-template-area, podemos utilizala de duas maneiras
+Defindo apenas altura e largura das linhas e colunas, neste primeiro exeplo definimos apenas a altura para as linhas e depois a largura para as colunas
+
+    grid-template: repeat(3, 200px) / repeat(4, 1rf);
+
+Neste segundo exemplo, nomeamos as areas do grid, após cada linha que definirmos os nomes, devemos definir uma altura para aquela linha, após todos nomes e alturas definidas, deve ser coloado uma barra e então informado a largura das colunas
+
+    grid-template: "header header header header" 150px "main main . sidebar" 300px "footer footer footer footer" 100px / 1fr 1fr 1fr 1fr
+
+*/
+
+/* TAMANHOS DAS LINHAS DO GRID
+
+Utilizando as propriedades column-gap e row-gap, podemos definir o tamanho das linhas(grid lines) horizontais e verticais, isso criara um espaçamento entre as linhas e colunas
+
+    row-gap: 10px;
+    column-gap: 20px;
+
+SHORTHAND GAP
+
+Tambem podemos utilizar a propriedade gap, que servira como um shorthad das propriedades column-gap e row-gap, no shorthand o primeiro valor passado ira apontar para as linhas e o segundo para as colunas
+
+*/
+
+/* SHORTHAND GRID
+
+Temos tambem a propriedade grid, que funciona como um shorthand de quase todas as propriedades vistas
+Valores antes da barra irão representar as linhas e após as barras irão representar as colunas
+
+EX 1:
+
+    Antes:
+    grid-template-rows: 100px 300px;
+    grid-template-columns: 3fr 1fr;
+
+    Depois:
+    grid: 100px 300px / 3fr 1fr
+
+EX 2:
+
+    Antes:
+    grid-auto-flow: row;
+    grid-template-columns: 200px 1fr;
+
+    Depois:
+    grid: auto-flow / 2oopx 1fr;
+
+EX 3:
+
+    Antes:
+    grid-auto-flow: row dense;
+    grid-auto-rows: 100px;
+    grid-template-columns: 1fr 2fr;
+
+    Depois:
+    grid: auto-flow dense 100px / 1fr 2fr;
+
+Ex 4:
+
+    Antes:
+    grid-template-rows: 100px 300px;
+    grid-auto-flow: column;
+    grid-auto-columns: 200px;
+
+    Depois:
+    grid: 100px 300px / auto-flow 200px;
+
+Ex 5:
+
+    Antes:
+    grid-template-areas: "header header header" "footer footer footer";
+    grid-template-rows: 1fr 25px;
+    grid-template-columns: auto 50px auto;
+
+    Depois:
+    grid: "header header header" 1fr "footer footer footer" 25px / auto 50px auto;
+
+*/
+
+/* POSICIONAMENTO DAS CELULAS
+
+Para posicionar as celulas dentro do display grid, podemos utilizar as propriedades justify items (colunas) e aling items (linhas), e para utilizar estas propriedades temos alguns palavras chaves
+
+HORIZONTAL (COLUNAS)
+
+stretch - Valor padrão, faz com que a célular ocupe toda a largura da coluna
+
+    justify-items: stretch;
+
+start - Ira posicionar a célula a esquerda e fazer com que a célula tenha a largura somente equivalente ao seu conteudo
+
+    justify-items: start;
+
+end - Ira posicionar a célula a direita e fazer com que a célula tenha a largura somente equivalente ao seu conteudo
+
+    justify-items: end;
+
+center - Ira centralizar a célula e fazer com que a célula tenha a largura somente equivalente ao seu conteudo
+
+    justify-items: center;
+
+VERTICAL (LINHAS)
+
+stretch - Valor padrão, faz com que a célular ocupe toda a altura da linha
+
+    aling-items: stretch;
+
+start - Ira posicionar a célula ao topo e fazer com que a célula tenha a altura somente equivalente ao seu conteudo
+
+    aling-items: start;
+
+end - Ira posicionar a célula abaixo e fazer com que a célula tenha a altura somente equivalente ao seu conteudo
+
+    aling-items: end;
+
+center - Ira centralizar a célula e fazer com que a célula tenha a altura somente equivalente ao seu conteudo
+
+    aling-items: center;
+
+SHORTHAND PLACE-ITEMS
+
+Com este shorthand conseguimos substituir as propriedades justify-items e aling-items, os valores devem ser passados na ordem abaixo.
+
+    place-items: linha coluna;
+
+    place-items: center star;
+
+*/
+
+/* POSICIONAMENTO DO GRID
+
+Em alguns casos possamos a vir precisar posicionar nossos grid dentro do container, para isso utilizamos a propriedade justify-content
+
+HORIZONTAL
+
+stretch - Valor padrão, faz com que o grid ocupe toda a largura do container
+
+    justify-content: stretch;
+
+start - Ira posicionar o grid a esquerda do container
+
+    justify-content: start;
+
+end - Ira posicionar o grid a direita do container
+
+    justify-content: end;
+
+center - Ira centralizar o grid ao meio do container
+
+    justify-content: center;
+
+space-around - Aplica espaçamento entre as colunas e nas laterais, sendo que os espaçamentos das laterais sera equivalente a metade do espaçamento entre uma coluna e outra
+
+    justify-content: space-around;
+
+space-between - Ocupara todo o container e aplicara um espaçamento entre uma coluna e outra
+
+    justify-content: space-between;
+
+space-evenly - Aplicara espaçamento entre as colunas e nas laterais de forma igual
+
+    justify-content: space-evenly;
+
+VERTICAL
+
+stretch - Valor padrão, faz com que o grid ocupe toda a autura do container des de que não possua uma altura de linhas pré definida
+
+    align-content: stretch;
+
+start - Ira posicionar o grid ao topo do container
+
+    align-content: start;
+
+end - Ira posicionar o grid abaixo no container
+
+    align-content: end;
+
+center - Ira centralizar o grid ao meio do container
+
+    align-content: center;
+
+space-around - Aplica espaçamento entre as linhas e nas na parte superior e inferior, sendo que os espaçamentos das parte superior e inferior sera equivalente a metade do espaçamento entre uma linha e outra
+
+    align-content: space-around;
+
+space-between - Ocupara todo o container e aplicara um espaçamento entre uma linha e outra
+
+    align-content: space-between;
+
+space-evenly - Aplicara espaçamento entre as linhas e na parte superior e inferior de forma igual
+
+    align-content: space-evenly;
+
+SHORTHAND
+
+Com este shorthand conseguimos substituir as propriedades justify-content e aling-content, os valores devem ser passados na ordem abaixo.
+
+    place-content: linha coluna;
+
+    place-content: center star;
+
+*/
+
+/* ALINHANDO ITENS INDIVIDUALMENTE DENTRO DA CÉLULAS
+
+Podemos alinhar um unico item dentro da sua célula, para isso utilizamos a propriedade justify-self, ela deve ser utilizada dentro do item que queremos alinhar
+
+HORIZONTAL
+
+stretch - Valor padrão, faz com que o item ocupe toda a largura da célula
+
+    justify-self: stretch;
+
+start - Ira posicionar o item a direita da célula
+
+    justify-self: start;
+
+end - Ira posicionar o item a esquerda da célula
+
+    justify-self: end;
+
+center - Ira centralizar o item ao meio da célula
+
+    justify-self: center;
+
+VERTICAL
+
+stretch - Valor padrão, faz com que o item ocupe toda a altura da célula
+
+    aling-self: stretch;
+
+start - Ira posicionar o item ao topo da célula
+
+    aling-self: start;
+
+end - Ira posicionar o item abaixo na célula
+
+    aling-self: end;
+
+center - Ira centralizar o item ao meio da célula
+
+    aling-self: center;
+
+SHORTHAND
+
+Com este shorthand conseguimos substituir as propriedades justify-self e aling-self, os valores devem ser passados na ordem abaixo.
+
+    place-self: linha coluna;
+
+    place-self: center star;
