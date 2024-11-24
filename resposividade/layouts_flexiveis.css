@@ -1,0 +1,167 @@
+/* Uma das maneiras de se construir layouts flexiveis é usando o grid layout; flexbox e múltiplas colunas, combinado com unidades de medidas relativas, incluindo as relacionadas à viewport
+
+*/
+
+/* MULTICOLUNAS (MULTICOL)
+
+Especifica-se quantas colunas o conteúdo será dividido e o navegador irá calcular o tamanho delas conforme o tamanho da tela mudar
+Para utilizar este métodos, usamos a propriedade column-count, e como valor passaremos em quantas colunas queremos dividir o conteudo, assim teremos sempre esse numero de colunas e o css ira se acarretar de ir calculando as suas medidas
+
+    column-count: 3;
+
+Tambem podemos utilizar a propriedade column-width, nesta propriedade passamos o valor que cada coluna deve ter, e o css se acarretara de adicionar ou remover colunas conforme a largura do dispositivo
+Neste propriedade só são aceitas unidades de medidas absolutas
+
+    column-width: 200px
+
+BORDAS PARA DIVISÃO DAS COLUNAS
+
+Podemos colocar bordas entre uma coluna e outra, para isso utilizamos a propriedade column-rule e os valores serão os mesmos que utilizamos na propriedade border
+
+    column-rule: 1px solid grey;
+
+ESPAÇAMENTO ENTRE COLUNAS
+
+Para aplicar um espaçamento entre as colunas, podemos utilizar a propriedade column-gap e atribuir um valor a ela
+
+    column-gap: 100px;
+
+*/
+
+/* FLEXBOX
+
+Através do flexbox, os elementos da página serão capazes de encolher ou crescer, distribuindo o espaço entre os itens de acordo com o tamanho do container
+E podemos utilizar as propriedades vistas no display_alinhamentos para trabalhar melhor esta responsivdade
+Para que o conteudo pare de crescer em telas muito grandes, uma boa configuração é utilizar a propriedade max-width que pode ser utilizada com o valor de 1200px
+
+*/
+
+/* GRID FLEXIVEIS 
+
+Outro método extremamento eficar de se criar layouts responsivos é utilizando o grid layout juntamente com a unidade de medida fr, atribuindo o espçao disponivel do container entre as colunas e linhas do grid
+
+*/
+
+/* MEDIA QUERIES
+
+Recurso que permite aplicar propriedades do CSS somente para algumas regras de tipos de mídia específicos
+
+Estrutura das medias queries:
+
+@media scren (min-width: 320px) and (max-width: 768px) {
+
+}
+
+@media - (Regra CSS) Padrão e é a forma que chamamos as media queries
+(at-rule = Regras que possuem o @) 
+Regra usadas para identificar o tipo de mídia que uma página está sendo visualizada, informando os recursos que esse tipo de mídia suporta e os operadores que podem ser combinados para misturar algumas condições
+
+screen - (Media Type) Este valor pode se alterar conforme a necessidade, quando utilizamos screen quer dizer que estamos nos referindo a uma tela/monitor
+    
+    screen - corresponde a dispositivos com telas integradas
+    
+    speech - Corresponde a dispositivos que leem o conteúdo de forma audível, como um leitor de tela exemplo
+    
+    all - Corresponde a todos os dispositivos
+    
+    print - corresponde a documentos que são uma pré-visualização de impressão, ou em qualquer mídia que será voltada para imprimir (Podemos fazer testes via devtools)
+
+(min-width: 320px) (max-width: 768px) - (Media Feature) É um recurso de media que utilizamos para definir um valor para que o CSS saiba quando deve aplicar as propriedades que firam dentro das chaves
+
+    min-width/min-height/max-width/max-height/width/height - Detecta a largura e altura da viewport
+
+    hover - Indica que a página esta sendo acessada através de um mecanismos de ponteiro, como um mouse
+
+    orientation - detecta se o dispositivo esta em modo retrato (portrait) ou paisagem (landscape)
+        @media screen and (orientation:landscape) {}
+
+    pointer - Detecta quão preciso é o ponteiro (grosso, fino, etc), ajuda a detectar touchsreen, mouse e etc..
+        
+        fine - Algo como um mouse ou trackpad
+            @media (pointer: fine) {}
+        
+        coarse - Dispositivo touchscreen
+            @media (pointer: coarse) {}
+        
+        none - O usuário não possui nenhum dispositivo de apontamento, ou seja provavelmente ele está navegando com a ajuda de um teclado ou um sistema de comando de voz
+            @media (pointer: none) {}
+
+and - (Operador) É possivel combinar, através de operadores lógicos, as medias features para atender as condições para aplicar os estilos
+
+    AND - Deve atender a todas media features (Recursos de mídia)
+
+    OR - Deve atender, no mínimo a uma das media features (Recursos de mídia)
+    Este operadores pode ser representado por uma virgual que separa as condições
+
+    NOT - Nega as condições aplicadas invertendo todo o significado da media query
+
+OUTRAS MEDIA QUERIES
+
+Existem media queries voltadas para:
+
+    Viewport/Características da página
+    Qualidade da exibição
+    Cores
+    Interação
+    Video
+    Script
+    Preferência do usuário
+
+    https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries#media_features
+
+MANEIRAS DE UTILIZAR AS MEDIAS QUERIES
+
+Além do CSS, as medias queries estão presentes também através do HTML e do JS, No HTML, por exemplo, podemos carregar folhas de estilos diferentes de acordo com um media query, ou aplicar na tag style
+
+    HTML 
+   
+        <link rel="stylesheet" href="style1.css" media="all">
+
+        <link rel="stylesheet" href="style2.css" media="(min-width: 1024px)">
+
+        <link rel="stylesheet" href="print.css" media="print">
+
+BREAKPOINTS
+
+Os breakpoints são os pontos de interrupção que colocamos nas medias queries para tratar a quebra de layout ou ajustar algum conteúdo para determinado dispositivo para deixar as páginas responsivas
+Anteriormente era criados estilos para cada tipo de dispositvos, porem com a grande variadade de dispositivos que existe hoje no mercado, é mais viavel criar os breakpoints quando nossa pagina começa a fazer ou não, quebras indesejadas no conteudo
+
+DEVEMOS SEMPRE USAR MEDIAS QUERIES?
+
+A utilização em ecesso das medias queries pode tornas o nosso site, muito dificil de manter
+
+    DESIGN ACESSÍVEL X DESIGN UNIVERSAL
+
+    "Um design acessivel irá criar uma porta larga para as pessoas de cadeiras de rodas entrarem, enquanto um design universal irá produzir uma entrada onde qualquer um se entraria desconsiderando suas habilidades." - Laura Kalbag
+
+Sendo assim, devemos utilizar as medias queries quando o nosso design flexivel não conseguir atender uma necessidade ou quando precisamos alterar um fluxo especifico
+
+IMAGEM RESPONSIVA
+
+Estratégias para imagens responsivas:
+
+    1.Definir uma largura máxima com o CSS
+    2.Renderizar diferentes imagens para tamanhos de tela distintos
+        2.1 Quando carregamos imagens muito grandes para container muito pequenos acabamos gastando muita memoria e ocupando muito espaço desnecessario
+        2.2 Quando colocamos imagens muito pequenas em containers muito grandes, acabamos perdendo qualidade
+
+Para resolver isso o indicado e carregar diversos tamanhos da imagens, conforme a necessidade, para isso podemos utilizar o atributo srcset acompanhado do media
+
+EX 1:
+    <figure>
+        <sourcer srcset="assets/imagem1.jpg" media="(max-width: 680px)">
+        <sourcer srcset="assets/imagem2.jpg">
+        <img src="assets/imagem2.jpg">
+    </figure>
+
+EX 2:
+    <img srcset="assets/imagem1.jpg 480w, srcset="assets/imagem2.jpg 800w " sizes="(max-width: 680px) 480px, 800px" src="srcset="assets/imagem2.jpg">
+
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+
+TIPOGRAFIA RESPONSIVA
+
+Estratégias para tipografia responsivas:
+
+    1. Unidade de medidas relativas (Indica-se rem)
+    2. Media Queries
