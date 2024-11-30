@@ -1,0 +1,109 @@
+/* PSEUDO ELEMENTOS
+
+Com os pseudo elementos, podemos adicionar ou alterar elementos do HTML diretamente pelo CSS
+A estrutura de um pseudo elemento sempre sera */
+
+/* PRIMEIRA LETRA DO TEXTO
+    
+    ::palavra-chave
+
+::first-letter - Este é utilizado para selecionar a primeira letra da primeira linha de um bloco de texto
+
+    p::first-letter {}
+
+Caso não seja informado um seletor, sera aplicado para todos os textos da pagina
+
+    ::first-letter {}
+
+As propriedade aceitas por esse pseudo-elemento são
+
+    color
+    background
+    margin
+    padding
+    border
+    font
+    propriedades de texto
+
+PRIMEIRA LINHA DO TEXTO
+
+::first-line - Este é utilizado para selecionar a primeira linha de um bloco de texto
+
+    p::first-line {}
+
+Caso não seja informado um seletor, sera aplicado para todos os textos da pagina
+
+    ::first-line {}
+
+As propriedade aceitas por esse pseudo-elemento são
+
+    color
+    backgound
+    font
+    propriedades de texto
+
+FUNDO DE VIDEOS
+
+::backdrop - Este é utilizado para alterar o fundo de videos que estão no modo fullscren, ou seja, no modo tela cheia. Aquelas bordas pretas que aparecebem principalmente quando estamos vendo o video em dispositivos menores
+
+    ::backdrop
+
+ESTILIZAÇÃO DE TÓPICOS/NUMERO DE LISTAS OU FLECHA DO SUMARY
+
+::marker - Este utilizamos quando queremos aplicar estilos em uma lista ordenada ou não e nas flechas do sumary
+
+    sumary::marker {}
+
+As propriedade aceitas por esse pseudo-elemento são
+
+    color
+    content (Utilizado para trocar/customizar a flecha por outros elementos)
+    white-space
+    foot
+    animation
+    transition
+
+PLACEHOLFER
+
+::placeholder - Este utilizamos para personalizar o texto do placeholder que vai dentro das tags inputs de formularios
+
+input::placeholder {}
+
+As propriedade aceitas por esse pseudo-elemento são
+
+    color
+    foot
+    background
+    text
+
+TEXTO SELECIONADO
+
+Quando vamos selecionar um texto para copiar por exemplo, geralemten ele possui uma cor diferente, que estilizamos utilizando o selection
+
+    body::selection {}
+
+As propriedade aceitas por esse pseudo-elemento são
+
+    color
+    background-color
+    text
+
+BUTTON FILE
+
+::file-selector-button - Este nos permite estilizar os botões de file da nossa pagina (Botões de upload de arquivos)
+
+    input::file-selector-button {}
+
+CRIAR ELEMENTOS
+
+O CSS nos disponibiliza dois pseudo elementos que permitem incluir elementos no HTML (estrutura da pagina) sem precisar modificalo
+
+::before - Permite criar um elementos dentro do seletor que estamos chamando, tornando esse elemento seu primeiro filho
+Ao utilizarmos esse pseudo elemento temos que obrigatóriamente passar a propriedade content, esta informara como valor o conteudo que esse novo elemento tera, e caso queiramos deixar esse elemento vazio, basta passar somente as aspas vazias
+
+    p::before {
+        content: "";
+    }
+
+::after - Permite criar um elementos dentro do seletor que estamos chamando, tornando esse elemento seu ultimo filho
+Ao utilizarmos esse pseudo elemento temos que obrigatóriamente passar a propriedade content, esta informara como valor o conteudo que esse novo elemento tera, e caso queiramos deixar esse elemento vazio, basta passar somente as aspas vazias
