@@ -107,3 +107,7 @@ Ao utilizarmos esse pseudo elemento temos que obrigatóriamente passar a proprie
 
 ::after - Permite criar um elementos dentro do seletor que estamos chamando, tornando esse elemento seu ultimo filho
 Ao utilizarmos esse pseudo elemento temos que obrigatóriamente passar a propriedade content, esta informara como valor o conteudo que esse novo elemento tera, e caso queiramos deixar esse elemento vazio, basta passar somente as aspas vazias
+
+    p::after {
+        content: "";
+    }
