@@ -1,0 +1,70 @@
+/* PERSPECTIVA
+
+A perspectiva é a forma na qual nós percebemos um objeto
+Em imagens é a perspectiva que dá a ilusão de que algo é tridimensional
+
+PROPRIEDADE PERSPECTIVE
+
+A propriedade define quão longe um objeto (elemento) esta longe do usuário
+Um valor mais baixo vai resultar em um efeito 3D mais intenso do que o valor mais alto
+Ao definir essa propriedade a um elemento, faz com que os elementos filhos tenham essa impressão de perspectiva, não o elemento por si só
+
+    perspective: 200px;
+
+!!! As movimentações no eixo x e y são feitas com os mesmos comandos de 2D !!!
+
+PONTO DE VISÃO
+
+Podemos tambem alterar a forma como sera vista os elementos (mais de cima, mais de um lado, mais de baixo), e para isso utilizamos a propriedade perspective-origin
+Por padrão esta propriedade tem o valor center, mas ela tambem aceita outras palavras chaves como top, bottom, left, right ou então valores de porcentamge
+
+    perspective-origin: left;
+    perspective-origin: 90%;
+
+    Tambem é aceito a combinação de palavras chaves
+
+        perspective-origin: left top;
+
+MOVIMENTO DO EIXO Z
+
+rotate - As rotações no eixo z são feitas no centido horario ou anti-horario, como ja visto no 2D, utilizando o método rotate
+
+traslateZ - No exio z tambem podemos trazer o elemento mais paa frente ou levalo ais para trás, para isso utilizamos o método translatez seguido de algum valor, sendo que valores negativos levaram o elemento mais para longe e valores positivos trarão mais para perto
+Aqui os valores devem ser passados em pixel
+
+    transform: translateZ(20px);
+
+scaleZ - Tambem podemos escalar elementos no eixo z, ou seja, fazer o elemento crescer
+
+    transform: scaleZ(3);
+
+POSICIONAMENTO DO EIXO Z
+
+Por padrão o eixo z vem centralizado, porem podemos alterar a sua posição utilizando a propriedade transform-origin, alterando a posição do eixo z, alterara os efeitos que o nosso elemento tera ou rotacionar, crescer e etc.
+Como valores são aceitos palavras chaves como top, bottom, left e right, porem essas palavras tambem podem ser combinadas
+
+    transform-origin: top left;
+
+PRESERVANTE O ESPAÇO 3D
+
+Quando dois elementos 3D se cruzam acaba que um ficara por cima do outro e ira quebrar os efeitos 3d, porem para manter os efeitos 3d de ambos elementos, utilizamos a propriedade transform-style, por padrão esta propriedade possui o valor flat, 
+
+    transform-style: flat;
+
+    Porem utilizamos o valor preserve-3D, isto fara com que os elementos se cruzem mas continuem com o efeito 3D
+
+        transform-style: preserve-3d;
+
+MATRIX3D
+
+Da mesma forma que o matrix 2D, o matrix 3D contempla todas propriedades e métodos que são utilizados no 3D, porem por serem muitas, pode ser tornar dificil a utilização sem uma ferramente de apoio como um gerador de matrix 3D
+
+OCULTAR FACE TRASEIRA DOS ELEMENTOS
+
+Por padrão os elementos possuem a face traseira totalmente visivel, a ponto de que ser fazermos um 180° com o elemento continuaremos vendo ele, isso se da pela propriedade backface-visibility que possui o valor visibility
+
+    backface-visibility: visibility;
+
+    hidden - Fara com que a parte de trás do elemento não fique visivel
+
+    backface-visibility: hidden;
