@@ -1,0 +1,185 @@
+/* Pseudo classes representam o estado especial de um elemento, por exemplo quando o ponteiro estar sobre um elemento e assim aplicamos um efeito especial para quando isso acontece
+As pseudo classes são represetandas por dois pontos seguidos de uma palavra chave
+
+:hover - Serve para aplicar um determinado estilo em um elemento quando o ponteiro do mouse estiver sobre ele
+
+    button:hover {}
+
+:active - Serve para aplicar um determinado estilo em um elemento quando ele estiver ativo, ou seja, quando for clicado
+
+    a:active {}
+
+:focus - Serve para aplicar um determinado estilo em um elemento quando ele estiver sendo focado
+
+    input:focus {}
+
+:focus-within - Serve para aplicar um determinado esilo em um elemento quando ele estiver sendo focado e consequentemente replicar para seus elementos filhos
+
+    label:focus-within {}
+
+:focus-visible - Serve para aplicar um determinado estilo em um elemento quando ele estiver sendo focado, porem se for apenas clicado e não manter o foco, nada ira acontecer
+
+    button:focus-visible {}
+
+:target - Este é utilizando junto a URLs, por exemplo quando possuimos ancoras em uma pagina, ou seja, ao clicar em um link seremos direcionados para um determinado local da pagina
+Caso algum elemento da pagina possua o mesmo id deste link onde o usuario clicar, ele pode ser estilizado utilizando o target
+
+    p:target {}
+
+:enabled - Utilizamos para estilizar elementos que estão habilitados na pagina, não necessariamente o elemento precisa estar com o atributo enabled, basta não estar disabled
+
+    button:enabled {}
+
+:disabled - Utilizamos para estilizar elementos que foram desabilitados na pagina
+
+    button:disabled {}
+
+:link - Serve para estilizar links que o usuario ainda não acessou
+
+    a:link {}
+
+:visited - Serve para estilizar links que o usuario já visitou
+
+    a:visited {}
+
+:placeholder-shown - Serve para estilizar um elemento que esteja apresentando um placeholder, seja um iput ou textarea, porem assim que o placeholder for substituido por algum valor, esta estilização sumira
+
+    input:placeholder-showns {}
+
+:checked - Utiliza-se junto a chekboxs ou radios, e com isso podemos estilizar os elementos quando estiverem no estado checado
+
+    input:checked {}
+
+:indeterminate - Utiliza-se para estilizar elementos que não 100% verdadeiros porem tambem não estão 100% falsos
+
+    progress:indeterminate {}
+
+:valid - Utiliza-se bastante em formularios para informar que os dados inseridos são validos de acordo com as validações do arquivo HTML
+
+    input:valid {}
+
+:invalid - Utiliza-se bastante em formularios para informar que os dados inseridos não são validos de acordo com as validações do arquivo HTML
+
+    input:invalid {}
+
+:in-range - Este serve para aplicar estilos aos input que utilizam os atributos min e max, aplicara estilos caso o valor informado no input esteja entre os valores minimos e maximos
+
+    input:in-range {}
+
+:out-ofrange - Este serve para aplicar estilos aos input que utilizam os atributos min e max, aplicara estilos caso o valor informado no input esteja foras dos valores minimos e maximos
+
+    input:out-of-range {}
+
+:required - Utiliza-se junto ao input e serve para estilizar campos obrigatórios
+
+    input:required {}
+
+:optional - Utiliza-se junto ao input e serve para estilizar campos opcionais
+
+    input:optional {}
+
+:autofill - Utiliza-se para estilizar input que foram preenchidos automaticamente, ou seja, preenchimento automatico
+Para que funcione no chrome, é necessario utilizar o prefixo -webkit-
+
+    input:-webkit-autofill {}
+
+:root - Representa a raiz do arquivo, ou seja, a tag html sendo assim não precisar ser acompanhada de um seletor, esta é bastante utilizanda para criar reset CSS ou na criação de variaiveis
+
+    :root {}
+
+:nth-child(posição do elemento) - Utiliza-se para estilizar os elementos filhos de um elemento, de acordo com a sua posição na pagina
+O numero/indice que fica entre parenteses representa a posição que esse elemento filho deva estar, caso não seja encontrado nesta posição, não sera estilizado
+
+    div:nth-child(2) {}
+
+    Tambem pode-se especificar qual o tipo de elemento filho deve ser estilizado, caso o elemento informado não seja encontrado na posição infomada, nem um elemento sera estilizado
+
+        div p:nth-child(1) {}
+
+    Nesta pseudo classe são aceitas tambem palavras chaves no lugar do indice
+    Utilizamos a palavra even para representar elementos de posição par e odd para representar elementos de posição inpar
+
+        div:nth-child(even) {}
+
+        div:nth-child(odd) {}
+
+    Pode-se ainda utilizar o valor do indice junto a letra n, isto fara com que seja estilizado elementos a cada 2 por exemplo
+
+        div:nth-child(2n) {}
+
+    Ainda pode-se utilizar tambem o sinal de soma mais um valor de indice, isso ira presentar que deve ser estilizado a cada 3 e deve começar no apartir do elementos/indice 2
+
+        div:nth-child(3n+2) {}
+
+    :nth-last-child - Funcionara da mesma maneira que o nth-child, porem começara de baixo para cima
+
+        div:nth-last-child(2) {}
+
+:nth-of-type - Este funciona da mesma maneira que o nth-child, porem não é necessario que o elemento filho informado esteja exatamente na posição infomarda, basta que ele possua esta posição que foi informada
+Todos os exemplos de nth-child funcionam tambem com o nth-of-type
+
+    div p:nth-of-type(2) {}
+
+    :nth-last-of-type - Funcionara da mesma maneira que o nth-of-type, porem começara de baixo para cima
+
+:first-of-type - Utiliza-se para estilizar elementos que sejma o primeiro do seu tipo (div, span, p ...)
+
+    div:first-of-type {}
+
+    Pode-se ainda especificar o tipo de elemento que quer estilizar
+
+        div p:first-of-type {}
+
+
+:last-of-type - Utiliza-se para estilizar elementos que sejma o ultimo do seu tipo (div, span, p ...)
+
+    div:last-of-type {}
+
+    Pode-se ainda especificar o tipo de elemento que quer estilizar
+
+        div p:last-of-type {}
+
+:only-child - Utilizamos para estilizar um elemento que não possui irmãos, ou seja, digamos que temos duas listas, sendo uma com varios itens e outra com apenas um item, aplicando esta pseudo classe a unica lista estilizada seria a com um item
+
+    li:only-child {}
+
+:only-of-type - Utiliza-se para estilizar um elemento que não possui irmãos do mesmo tipo
+
+    div:only-of-type {}
+
+:empty - Utiliza-se para estilizar elemento que não possua elementos filhos HTML
+
+    div:empty {}
+
+:is - Utiliza-se para compactar comandos CSS, ou seja, ao invés de fazer conforme abaixo
+
+    div h1, div p, div li {}
+
+    Fazemos desta forma
+
+        div:is(h1, p, li) {}
+
+    Alem disso o is tambem é mais tolerante, ou seja, quando informado um seletor que não é valido o código se quebra, utiliazndo o is não corremos este risco
+    Sendo assim ao invés de
+
+        div h1, div p, div qualquer coisa {}
+
+        Fazemos desta forma
+
+            div:is(h1, p, quakquer coisa) {}
+
+    Quase necessario estilizar o mesmo tipo de tag porem de pais diferente, podemos fazer da seguinte forma
+
+        :is(div, section, nav, article) p {}
+
+:where - Funciona da mesma maneira que o is, porem ele não possui tanta prioridade, então suas estilizações podem ser facilmente substituidas por um seletor comum
+
+    :where(div, section, nav, article) p {}
+
+:not - Utilizamos para estilizar um conjuto de elementos porem ignorando algum que não queremos estilizar, por exemplo, podemos addicionar uma class irrelevante no HTML e chama-la aqui
+
+    div p:not(.irrelevante) {}
+
+:has - Nos permite estilizar elementos pai que possuam um parametro filho especifico, seja um seletor, um id, uma class etc
+
+    figure:has(img) {}
