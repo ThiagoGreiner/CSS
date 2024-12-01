@@ -1,0 +1,40 @@
+/* Aqui veremos como trabalhar os elementos em 2D, permitindo que os elementos se movam, escalem, rotacionem e possuam alguma distorção, e para isso utilizaremos a propriedade transform, esta possui diversos métodos que veremos abaixo
+
+translate - Permite mover os elementos no eixo x (horizontal) e y (vertical), no eixo y, valores negativos deixam o elemento mais para cima e positivos mais para baixo
+
+    transform: translate(eixo_x, eixo_y);
+    transform: translate(20px, -50px);
+
+rotate - Este método rotaciona o elemento no sentido horario (valores positivos) ou anti-horario (valores negativos)
+Para fazer esta rotação devemos informar o valor em gráus que é representado pela unidade de medida deg
+
+    transform: rotate(45deg);
+
+rotateX - Utiliza-se para rotacionar os elementos no eixo X
+Para fazer esta rotação devemos informar o valor em gráus que é representado pela unidade de medida deg
+
+    transform: rotateX(30deg)
+
+rotateY - Utiliza-se para rotacionar os elementos no eixo Y
+Para fazer esta rotação devemos informar o valor em gráus que é representado pela unidade de medida deg
+
+    transform: rotateY(30deg)
+
+scale - Utiliza-se para escalar um elemento, ou seja, quando ele deve crescer no eixo x e y
+Para fazer essa escala basta passarmos um valor e o CSS ira pegar esse valor e multiplicar pela altura/largura do elemento
+
+    transform: scale(eixo_x, eixo_y)
+    transform: scale(2, 3)
+
+skew - Utiliza-se para destorcer um elemento de acordo com o gráu informado
+Este método aceita somente um valor, porem se informado apenas um valor, ele servira o eixo x e o eixo y ficara como 0
+Caso seja necessario destorcer no eixo y, sera necessario informar dois valores
+
+    transform: skew(300deg)
+    transform: skew(30deg, 10deg)
+
+matrix - Podemos utilizar este método como um shorthand de todos os que viamos até agora
+Neste método não necessario informar as unidades de medida (deg)
+
+    transform: matrix(scaleX, skewY, skewX, scaleY, translateX, translateY)
+    transform: matrix(1, 0, 0, 1, 0, 0)
