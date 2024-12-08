@@ -1,0 +1,149 @@
+/* TRANSITION
+
+Através das animções podemos fazer com que um elemento mudem do seu estilo inicial para um outro estilo de forma gradual
+Para isso utilizamos a propriedade transition, que é uma shorthand de outras propriedades, sendo elas:
+
+    transition-delay - (Tempo que a transição ira demorar para iniciar)
+    transition-duration - (Tempo que levara a transição, são aceitos valores negativos)
+    transition-property - (referência a propriedade para qual sera aplicada)
+    transition-timing-function - (Esta propriedade referere a velocidade da transição, eaceita alguns valores padrões, sendo eles:
+        linear - Aplica um velocidade de transição igual do inicio ao fim
+        
+        ease (valor padrão) - Aplica uma velocidade de transição devagar no inicio, rapida no meio  e devagar no final novamente
+        
+        ease-in - Aplica uma velocidade lenta no inicio e rapida no final
+        
+        ease-out - Aplica uma velocidade rapida no inicio e lenta no final
+        
+        ease-in-out - Aplica uma velocidade lenta no inicio e no fim
+        
+        cubic_bezier(.17,.67,.83,.67) - Aplica uma transição personalizada e pode ser personalizada utilizando o site  https://cubic-bezier.com/#.17,.67,.83,.67
+
+Estas propriedades devem ser passadas na seguinte ordem
+
+    transition: duration
+    transition: property duration
+    transition: property duration timing-function
+    transition: property duration timing-function delay
+*/
+
+/* ANIMAÇÕES COMPLEXAS
+
+@keyframes - Permite criar animações no css, para isto basta chamar o @keyframes e informar um nome para ele, por exemplo:
+
+    @keyframes animacao-botao {
+    
+    }
+
+Dentro das chaves cria-se a animação passando os tempos em que ela deve ocorrer, sendo necessario infornar pelo menos dois tempos(inicio e fim)
+
+Para passar o tempo podemos utilizar as palavras reservadas from (inicio (De)) e to (fim (Para)), e dentro das chaves de cada tempo informar a animação que sera realizada
+
+    @keyframes animacao-botao {
+        from {
+            background: #ffffff;
+        }
+        to {
+            background: #000000;
+        }
+    }
+
+Pode-se tambem passar os tempos via porcentagem
+
+    @keyframes animacao-botao {
+        0% {
+            background: #ffffff;
+        }
+        50% {
+            background: #252525;
+        }
+        100% {
+            background: #000000;
+        }
+    }
+
+CHAMANDO O @KEYFRAMES
+
+Após criados os kreyframes, é necessario chama-los e passar um tempo de animação, para isso utiliza-se as propriedades:
+
+    animation-name - Chama a animação
+
+        animation-name: animacao-botao;
+
+    animation-duration - Define a duração da animação
+
+        animation-duration: 4s;
+*/
+
+/* NUMERO DE VEZES QUE IRA ANIMAR
+
+Para fazer que uma animação seja executada mais de uma vezes, pode-se utilziar a propriedade:
+
+    animation-iteration-count
+
+seguida do numero de vezes que deve ser executada. São aceitos valores numericos ou infite (infinitas vezes)
+
+    animation-iteration-count 3;
+
+*/
+
+/* DIREAÇÃO DA ANIMAÇÃO
+
+Por padrão as animações são executadas do inicio para o fim, porem pode-se utilizar a propriedade animation-direction para alterar este fluxo
+
+normal - Valor padrão, executara a animação do inicio para o fim (frente para trás)
+
+    animation-direction: normal;
+
+reverse - Executara a animação di fim para o inicio (de trás para frente)
+
+    animation-direction: reverse;
+
+alternate - Executara a animação do inicio para o fim (frente para trás) e depois do fim para o inicio (de trás para frente)
+
+    animation-direction: alternate;
+
+alternate-reverse - Executara a animação do fim para o incio (de trás para frente) e depois do inicio para o fim (frente para trás)
+
+    animation-direction: alternate-reverse;
+
+*/
+
+/* ESTADO ANTES/APÓS ANIMAÇÃO
+
+Por padrão um elemento tera um estado padrão, onde ele permanece antes de ser animado e retorna após a animação, porem com a propriedade animation-fill-mode é possivel alterar este estado
+
+none - Valor padrão
+
+    animation-fill-mode: none;
+
+forwards - Fara com que o elemento permaneça em seu estado padrão até que seja animado, após animar e finalizar a animação ele permanecera com o ultimo estilo da aniamação
+
+    animation-fill-mode: forwards;
+
+backwards - Fara com que o elemento possua o valor inicial da animação, mesmo antes de começa-la, só retornando ao valor padrão após realizar a animação e finaliza-la
+
+    animation-fill-mode: backwards;
+
+both - Fara com que o elemento possua o valor inicial da animação, mesmo antes de começa-la, e após finaliza-la ele mantera o valor final da animação
+
+    animation-fill-mode: both;
+
+*/
+
+/* PAUSANDO ANIMAÇÃO
+
+Em casos onde a animação é infinita, é possivel fazer a pausa da animação quando o mouse descansar em cima dela por exemplo
+Para isso utilizamos a propriedade animation-play-state
+
+alternate - Pausa a animação
+
+    animation-play-state: alternate;
+
+*/
+
+/* SHORTHAND ANIMATION
+
+Para utilizar a shorthand da propriedade animation, deve se seguir a seguinte ordem
+
+    animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-direction;
