@@ -1,0 +1,69 @@
+/* Importante atentar a hierarquia e especificidade dos elementos
+
+Por padrão o css ira respeitar a seguinte hierarquia ao aplicar estilos para os elementos html, lembrando que o mais acima possui uma hierarquia maior e os abaixo dele serão ignorados caso estejam aplicando o mesmo tipo de estilo
+
+    inline - Aplicado diretamente na linha CSS
+    
+    interno - Aplicado em um bloco de código CSS dentro do head HTML
+    
+    externo - Aplicado em um arquivo CSS externo
+
+Porem existe casos em que essa hierarquia pode ser quebrado, caso a especificidade do código CSS seja mais forte que a hierarquia
+
+Ou seja, digamos que tenhamos uma declaração externa:
+
+    div .container p {}
+
+E uma interna:
+
+    p {}
+
+A especificidade da declaração externa é muito maior, sendo assim ela tera mais força e sera considerada primeiro
+
+*/
+
+/* Pontuação de especificidade que o navegador faz na hora de considerar os estilos
+
+    inline - 1000 pontos
+    id - 100 pontos
+    classes, pseudo-classes e atributos - 10 pontos
+    tag HTML - 1 ponto
+
+EX: 
+
+    #container p = 101 pontos
+
+*/
+
+/* RECURSO !IMPORTANT
+
+O CSS tambem disponibiliza o !important, que faz com que o navegador ignore o grau de especificidade
+
+    p {
+        color: red !important;
+    }
+
+    .container p {
+        color: blue;
+    }
+
+É muito importante utilizar isto com cuidado. Utilizar somente quando não possuir outra alternativa.
+
+O !important é mais utilizado quando é necessario estilizar arquivos trazidos externamente
+
+*/
+
+/* HERANÇA
+
+Por padrão algumas propriedades fazem com que os elementos erdem um estilo do elemento pai, isso pode ser util em alguns casos, assim não é necessario ir de elemento em elemento aplicando o mesmo estilo
+
+Algumas propiedades como width, height, margin, padding, border não são herdadas por padrão, mas podem herdadas de forma forçada
+Para fazer a herança forçada é necessario utilizar o valor inherit na propriedade que esta dentro do elemento filho
+
+    div {
+        border: 1px solid blue;
+    }
+
+    p {
+        border: inherit;
+    }
