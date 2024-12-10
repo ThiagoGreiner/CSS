@@ -1,0 +1,29 @@
+/* MOTORES DE RENDERIZAÇÃO
+
+Cada navegador possui seus proprios estilos CSS, por isso é importante realizar os resets CSS como visto no arquivo 13.
+
+Motores de renderização mais conhecidos:
+
+    blink - Para Chrome, Opera
+    Gecko - Para Firefox
+    WebKit - Para IOS, Safari
+    Trident - Para Internet Explore
+
+Outro ponto inportante é que alguns navegadores não suportam recursos mordernos, por isso, antes de aplicar algum recursos no CSS, é importante verificar quais navegadores aceitam este recurso
+Para fazer esta verificação pode-se utilizar o Can I use
+
+    https://caniuse.com/
+
+*/
+
+/* PREFIXOS NO CSS
+
+Prefixos do CSS são mecanismos que utiliza-se para permitir que os navegadores implementem sua propria versão de um recurso CSS em quanto ele ainda esta sendo testado
+Assim permitindo que não entre em conflito com as implementações de outros navegadores ou com a implementação final sem exte prefixo
+
+Exemplos de prefixos:
+
+    -moz-: Firefox
+    -webkit-: Chrome/Edge/Opera/Safari
+    -ms-: IE (Versões antigas)
+    -o-: Opera (Versões antigas)
