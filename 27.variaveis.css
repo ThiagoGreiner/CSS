@@ -1,0 +1,48 @@
+/* DECLARAÇÃO DE VARIAVEIS
+
+o CSS permite criar variaveis, estar serve para organizar o código e reutilizar valores especificos do código
+
+A declaração de uma variavel é feita dentro da pseudo classe root, e para declarala utiliza-se dois hifens seguidos do nome da variavel e dois pontos.
+Após os dois pontos é inserido o valor da variavel
+
+    :root {
+        --variavel-um: linear-gradient(90deg, #fc4668 0%, #3f53fb 100%);
+    }
+
+*/
+
+/* UTILIZANDO VARIAVEIS
+
+Para utilizar uma variavel que já foi declarada, utiliza-se a função var, e dentro de parenteses coloca-se o nome da variavel que se deseja utilizar
+
+    background: var(--variavel-um);
+
+*/
+
+/* LIMITANDO O ESCOPO DE UMA VARIAVEL
+
+Para alterar o escopo de uma varivel, basta trocarmos o local onde ela esta sendo definida, por exemplo o :root
+
+Um exemplo de onde isto pode ser util é em uma pagina onde o body possui os temas/classe dark ou light
+Assim declaramos variaveis dentro das classes ao invés de no :root, assim sempre que a classe HTML for alterada para dark ou light as variaveis tambem se "alterarão"
+
+    .light-theme {
+        --bg-body: rgb(247, 247, 247)
+        --bg-gradient: linear-gradient(90deg, #fc4668 0%, #3f53fb 100%);
+    }
+
+    .dark-theme {
+        --bg-body: rgb(34, 34, 34)
+        --bg-gradient: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    }
+
+*/
+
+/* FALL BACK
+
+O fall back é utilizado para termos certeza que algum valor sera aplicado caso determinada variavel não exista
+Para isso basta definirmos um segundo valor após chamarmos uma variavel
+
+    color: var(--text-color, blue);
+
+*/
